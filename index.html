@@ -1,1 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoila's Kitchen | Wholesome Catering & Meal Prep in Welland</title>
+    <!-- Google Fonts for Elegant Serif & Clean Sans-Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #c49a45;
+            --primary-gold-hover: #b38936;
+            --dark-overlay: rgba(26, 26, 26, 0.75);
+            --charcoal: #222222;
+            --light-bg: #fdfbf7;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .btn-nav {
+            background-color: var(--primary-gold);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-gold-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px 20px;
+            /* Update background URL below with your preferred high-res image */
+            background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: var(--primary-gold);
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-hero:hover {
+            background-color: var(--primary-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Strategic Lead Magnet Banner */
+        .lead-banner {
+            background-color: var(--white);
+            padding: 40px 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: -40px;
+            position: relative;
+            z-index: 5;
+            border-radius: 8px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .banner-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .banner-grid { grid-template-columns: 1fr; gap: 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            header { padding: 15px 20px; }
+            .nav-links { display: none; }
+        }
+
+        .banner-text h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .banner-text p {
+            color: var(--text-muted);
+        }
+
+        .lead-form-inline {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lead-form-inline input[type="email"] {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid #dddddd;
+            border-radius: 50px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .lead-form-inline button {
+            background-color: var(--charcoal);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .lead-form-inline button:hover {
+            background-color: var(--primary-gold);
+        }
+
+        /* Services Grid Section */
+        .services-section {
+            padding: 100px 5% 80px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid #f0eae1;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(196, 154, 69, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Lead Capture Questionnaire Segment */
+        .quote-section {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .quote-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .quote-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .quote-section p {
+            color: #cccccc;
+            margin-bottom: 40px;
+        }
+
+        .main-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: left;
+            color: var(--text-dark);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .main-form { padding: 25px; }
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-gold-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111111;
+            color: #888888;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #222222;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">ZOILA'S KITCHEN</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#quote">Meal Options</a></li>
+            <li><a href="#quote" class="btn-nav">Meal Quote</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Framework Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Delicious Meals<br>for Every Event</h1>
+            <p>Wholesome Catering and Meal Prep Crafted for Every Table in Welland, Ontario</p>
+            <a href="#quote" class="btn-hero">Plan Your Gathering Today</a>
+        </div>
+    </section>
+
+    <!-- Hook / Lead Conversion Asset -->
+    <section class="lead-banner">
+        <div class="banner-grid">
+            <div class="banner-text">
+                <h2>5 Meals For $100</h2>
+                <p>Enjoy customisable options. Unlock <strong>10% off</strong> your first order and receive weekly menu drops directly to your inbox.</p>
+            </div>
+            <div class="banner-form">
+                <!-- Connect action to an email marketing tool endpoint (Mailchimp, Klaviyo, ConvertKit, etc.) -->
+                <form class="lead-form-inline" action="#" method="POST">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Claim Offer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Business Pillars Section -->
+    <section class="services-section" id="services">
+        <h2 class="section-title">Catering and Meal Preparation Services</h2>
+        <p class="section-subtitle">Freshly prepared with intention, family traditions, and distinct local flavours.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🍳</div>
+                <h3>Weekly Meal Prep</h3>
+                <p>Nutritious, ready-to-enjoy meals designed for busy individuals, professionals, and families tracking balanced lifestyles.</p>
+                <a href="#quote" class="card-link">View Pricing &rarr;</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Student-Friendly</h3>
+                <p>Budget-friendly meal packages created for campus life. Big portions that support busy academic schedules without compromising quality.</p>
+                <a href="#quote" class="card-link">Explore Packages &rarr;</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❤️</div>
+                <h3>Senior Meal Solutions</h3>
+                <p>Comfort-driven dishes prepared carefully with specific dietary preferences in mind. Thoughtfully portioned and easy to heat.</p>
+                <a href="#quote" class="card-link">Learn More &rarr;</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Intimate Catering</h3>
+                <p>Family-style custom catering tailored to small gatherings, milestones, and celebrations across the Niagara Region.</p>
+                <a href="#quote" class="card-link">Request Consultation &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- High-Intent Lead Capture Engine -->
+    <section class="quote-section" id="quote">
+        <div class="quote-container">
+            <h2>Request a Custom Meal Quote</h2>
+            <p>Tell us a bit about your timeline or dietary needs, and we'll craft a perfect custom menu option tailored exactly to your table.</p>
+            
+            <form class="main-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(905) 555-0199">
+                    </div>
+                    <div class="form-group">
+                        <label for="service-type">What service are you looking for?</label>
+                        <select id="service-type" name="service-type">
+                            <option value="meal-prep">Weekly Meal Prep Pack (5 for $100)</option>
+                            <option value="student">Student Package Options</option>
+                            <option value="senior">Senior Balanced Meals</option>
+                            <option value="catering">Intimate Event Catering</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Dietary Preferences or Event Details</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="List any allergies, flavour goals, or details here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Get My Custom Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Element -->
+    <footer>
+        <p>&copy; 2026 Zoila's Kitchen. Located in Welland, Ontario. All rights reserved.</p>
+        <p>Digital Strategy & Web Architecture by <a href="#">Custom Exclusive Socials</a></p>
+    </footer>
+
+</body>
+</html>
