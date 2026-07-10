@@ -1,103 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Zoila's Kitchen | Digital Growth Strategy</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-:root {
-    --black:#0b0b0b;
-    --gold:#c8a45d;
-    --cream:#f5efe5;
-    --gray:#1b1b1b;
+:root{
+--black:#090909;
+--dark:#121212;
+--gold:#c7a45a;
+--cream:#f5efe4;
+--olive:#596043;
+--white:#ffffff;
 }
+
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
+
 
 body{
-    background:var(--black);
-    color:white;
-    font-family:Inter, sans-serif;
+
+background:var(--black);
+color:white;
+font-family:Inter, sans-serif;
+
 }
+
+
 
 section{
-    min-height:100vh;
-    padding:100px 8%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+
+min-height:100vh;
+padding:100px 8%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
 }
+
+
 
 h1,h2,h3{
-    font-family:"Playfair Display",serif;
+
+font-family:"Cormorant Garamond",serif;
+
 }
+
+
 
 h1{
-    font-size:clamp(50px,7vw,90px);
-    line-height:1.1;
+
+font-size:clamp(55px,8vw,110px);
+line-height:.95;
+font-weight:700;
+
 }
+
+
 
 h2{
-    font-size:50px;
-    margin-bottom:40px;
+
+font-size:clamp(40px,5vw,70px);
+margin-bottom:40px;
+
 }
 
-p{
-    color:#cfcfcf;
-    font-size:18px;
-    line-height:1.7;
+
+
+h3{
+
+font-size:30px;
+margin-bottom:15px;
+
 }
+
+
+
+p{
+
+font-size:18px;
+line-height:1.7;
+color:#d0d0d0;
+
+}
+
+
+
+.gold{
+
+color:var(--gold);
+
+}
+
 
 
 /* HERO */
 
+
 .hero{
 
 background:
+
 linear-gradient(
-rgba(0,0,0,.65),
-rgba(0,0,0,.9)
+rgba(0,0,0,.55),
+rgba(0,0,0,.95)
 ),
+
 url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f")
 center/cover;
 
+
+position:relative;
+
 }
 
-.gold{
+
+
+.logo{
+
+letter-spacing:5px;
+font-size:14px;
 color:var(--gold);
+margin-bottom:40px;
+
 }
 
-.subtitle{
-margin-top:30px;
+
+
+.hero p{
+
 max-width:700px;
+
 }
 
 
 .button{
 
 display:inline-block;
+
 margin-top:40px;
-padding:18px 40px;
+
+padding:18px 45px;
+
 background:var(--gold);
-color:black;
-font-weight:600;
+
+color:#111;
+
 border-radius:50px;
+
 text-decoration:none;
 
+font-weight:600;
+
+width:max-content;
+
+transition:.3s;
+
 }
+
+
+.button:hover{
+
+transform:translateY(-5px);
+
+}
+
 
 
 /* CARDS */
@@ -106,33 +189,44 @@ text-decoration:none;
 .grid{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
 gap:25px;
 
 }
 
 
+
 .card{
 
 background:
-rgba(255,255,255,.06);
 
-border:1px solid rgba(255,255,255,.1);
+linear-gradient(
+145deg,
+rgba(255,255,255,.09),
+rgba(255,255,255,.03)
+);
+
+
+border:1px solid rgba(255,255,255,.12);
 
 padding:35px;
 
 border-radius:25px;
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 
 transition:.4s;
 
 }
 
 
+
 .card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-12px);
 
 border-color:var(--gold);
 
@@ -140,13 +234,76 @@ border-color:var(--gold);
 
 
 
-.number{
+.metric{
 
 font-size:55px;
-font-weight:bold;
+
+font-weight:600;
+
 color:var(--gold);
 
+margin-bottom:10px;
+
 }
+
+
+
+/* DIVIDER */
+
+
+.divider{
+
+height:1px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+var(--gold),
+transparent
+);
+
+margin:40px 0;
+
+}
+
+
+
+
+
+/* AUDIT */
+
+
+.score{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+margin-bottom:25px;
+
+padding:25px;
+
+background:#151515;
+
+border-radius:20px;
+
+}
+
+
+
+.score span{
+
+font-size:35px;
+
+color:var(--gold);
+
+font-weight:bold;
+
+}
+
 
 
 /* FUNNEL */
@@ -154,142 +311,159 @@ color:var(--gold);
 
 .funnel{
 
-display:flex;
-flex-direction:column;
-gap:20px;
-max-width:600px;
+max-width:700px;
 
 }
+
 
 
 .step{
 
-padding:25px;
-background:#161616;
+background:#151515;
+
+padding:28px;
+
+margin:15px 0;
+
 border-left:5px solid var(--gold);
+
 font-size:22px;
 
-}
-
-
-
-/* TIMELINE */
-
-
-.timeline{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-
-}
-
-
-.phase{
-
-background:#151515;
-padding:30px;
-border-radius:20px;
+border-radius:10px;
 
 }
 
 
 
-/* FOOTER */
+/* MOCKUP */
 
-footer{
 
-padding:80px 8%;
+.browser{
+
+background:#111;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:25px;
+
+box-shadow:0 30px 80px rgba(0,0,0,.5);
+
+}
+
+
+
+.browser-top{
+
+display:flex;
+
+gap:8px;
+
+margin-bottom:25px;
+
+}
+
+
+.dot{
+
+width:12px;
+height:12px;
+border-radius:50%;
+background:#777;
+
+}
+
+
+.website{
+
+background:
+
+linear-gradient(
+135deg,
+#252525,
+#111
+);
+
+padding:60px 30px;
+
 text-align:center;
 
-background:#050505;
+border-radius:15px;
 
 }
+
+
+
+.website h3{
+
+font-size:45px;
+
+}
+
+
+
+
+
+/* MOBILE */
 
 
 @media(max-width:700px){
 
 section{
+
 padding:70px 5%;
+
 }
 
-h2{
-font-size:36px;
-}
 
 }
 
 </style>
 
+
 </head>
+
 
 
 <body>
 
 
+
 <section class="hero">
 
-<p class="gold">
-DIGITAL GROWTH STRATEGY
-</p>
+
+<div class="logo">
+
+CUSTOM EXCLUSIVE SOCIALS
+
+</div>
+
 
 <h1>
-Transforming<br>
-Zoila's Kitchen<br>
-into a <span class="gold">digital destination</span>
+
+Zoila's Kitchen
+
+<br>
+
+<span class="gold">
+Digital Growth Strategy
+</span>
+
 </h1>
 
-<p class="subtitle">
 
-A complete strategy designed to increase reservations,
-online orders, catering inquiries, customer loyalty,
-and local search visibility.
+<p>
+
+A premium digital transformation plan designed to increase restaurant discovery, reservations, online orders, catering inquiries and customer loyalty.
 
 </p>
 
 
 <a class="button">
-View Growth Plan
+Explore Strategy
 </a>
 
-</section>
-
-
-
-
-<section>
-
-<h2>
-Current Digital Opportunity
-</h2>
-
-
-<div class="grid">
-
-<div class="card">
-<div class="number">63%</div>
-<p>Website conversion opportunity</p>
-</div>
-
-
-<div class="card">
-<div class="number">41%</div>
-<p>SEO visibility opportunity</p>
-</div>
-
-
-<div class="card">
-<div class="number">★★★★★</div>
-<p>Strong reputation foundation</p>
-</div>
-
-
-<div class="card">
-<div class="number">∞</div>
-<p>Potential customer growth</p>
-</div>
-
-</div>
 
 </section>
 
@@ -297,288 +471,8 @@ Current Digital Opportunity
 
 
 
-
 <section>
 
-<h2>
-Growth Opportunities
-</h2>
-
-
-<div class="grid">
-
-<div class="card">
-<h3>Website Experience</h3>
-<p>
-Create a premium website experience
-that turns visitors into reservations.
-</p>
-</div>
-
-
-<div class="card">
-<h3>Catering Funnel</h3>
-<p>
-Build a dedicated catering system
-to capture larger orders.
-</p>
-</div>
-
-
-<div class="card">
-<h3>Local SEO</h3>
-<p>
-Increase visibility for restaurant searches
-through Google optimization.
-</p>
-</div>
-
-
-<div class="card">
-<h3>Customer Retention</h3>
-<p>
-Create email and loyalty systems
-that bring customers back.
-</p>
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<h2>
-High-Converting Website Blueprint
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-<h3>Homepage</h3>
-<p>
-Luxury visuals, story, reviews,
-menu highlights and reservations.
-</p>
-</div>
-
-
-<div class="card">
-<h3>Menu Experience</h3>
-<p>
-Mobile-friendly ordering experience
-built around conversions.
-</p>
-</div>
-
-
-<div class="card">
-<h3>Catering Page</h3>
-<p>
-Dedicated landing page designed
-to generate inquiries.
-</p>
-</div>
-
-
-<div class="card">
-<h3>SEO Pages</h3>
-<p>
-Rank for local restaurant searches.
-</p>
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<h2>
-Customer Growth Funnel
-</h2>
-
-
-<div class="funnel">
-
-<div class="step">
-Google Search
-</div>
-
-<div class="step">
-Website Visit
-</div>
-
-<div class="step">
-Reservation / Online Order
-</div>
-
-<div class="step">
-Email Capture
-</div>
-
-<div class="step">
-Offers + Loyalty Marketing
-</div>
-
-<div class="step">
-Repeat Customer + Reviews
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<h2>
-Marketing Strategy
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Social Media</h3>
-
-<p>
-Behind-the-scenes content,
-chef storytelling,
-customer reactions,
-food videos and community content.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Paid Advertising</h3>
-
-<p>
-Google Ads + Meta campaigns
-targeting hungry local customers.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Email Marketing</h3>
-
-<p>
-Birthday offers,
-special events,
-holiday promotions.
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-
-<h2>
-90 Day Growth Roadmap
-</h2>
-
-
-<div class="timeline">
-
-
-<div class="phase">
-
-<h3>Month 1</h3>
-
-<p>
-Audit website,
-SEO,
-branding,
-customer journey.
-</p>
-
-</div>
-
-
-<div class="phase">
-
-<h3>Month 2</h3>
-
-<p>
-Launch redesign,
-content strategy,
-Google optimization.
-</p>
-
-</div>
-
-
-
-<div class="phase">
-
-<h3>Month 3</h3>
-
-<p>
-Launch campaigns,
-email systems,
-conversion tracking.
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section>
 
 <h2>
 The Opportunity
@@ -588,16 +482,867 @@ The Opportunity
 <p>
 
 Zoila's Kitchen already has the most important ingredient:
-a strong product and customer experience.
+a memorable food experience.
 
-The next step is building a digital system
-that consistently attracts, converts and retains customers.
+The next opportunity is creating a digital ecosystem that turns online attention into measurable revenue.
+
+</p>
+
+
+<div class="divider"></div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="metric">
++35%
+</div>
+
+<h3>
+Reservations
+</h3>
+
+<p>
+Improve conversion through a redesigned customer journey.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="metric">
++60%
+</div>
+
+<h3>
+Catering Leads
+</h3>
+
+<p>
+Create a dedicated system for higher-value bookings.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="metric">
++40%
+</div>
+
+<h3>
+Google Visibility
+</h3>
+
+<p>
+Increase discovery through local SEO.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Digital Experience Audit
+</h2>
+
+
+
+<div class="score">
+
+Website Conversion
+
+<span>
+72/100
+</span>
+
+</div>
+
+
+
+<div class="score">
+
+Local SEO
+
+<span>
+55/100
+</span>
+
+</div>
+
+
+
+
+<div class="score">
+
+Social Media Potential
+
+<span>
+85/100
+</span>
+
+</div>
+
+
+
+<div class="score">
+
+Customer Retention
+
+<span>
+40/100
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>
+The Customer Growth System
+</h2>
+
+
+<div class="funnel">
+
+
+<div class="step">
+📱 Instagram Discovery
+</div>
+
+
+<div class="step">
+🔎 Google Search
+</div>
+
+
+<div class="step">
+🌐 Premium Website Experience
+</div>
+
+
+<div class="step">
+🍽 Reservation / Online Order
+</div>
+
+
+<div class="step">
+📧 Email + Loyalty Marketing
+</div>
+
+
+<div class="step">
+⭐ Repeat Customer + Reviews
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>
+Website Transformation
+</h2>
+
+
+
+<div class="browser">
+
+
+<div class="browser-top">
+
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+
+</div>
+
+
+
+<div class="website">
+
+
+<h3>
+Authentic Flavours.
+<br>
+Unforgettable Moments.
+</h3>
+
+
+<p>
+
+A luxury website experience built around food, storytelling and reservations.
+
+</p>
+
+
+<br>
+
+<div class="button">
+Reserve Table
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+<!-- PART 2 CONTINUATION -->
+
+
+<section>
+
+
+<h2>
+Social Media Growth Strategy
+</h2>
+
+
+<p>
+
+Turn Zoila's Kitchen's content into a customer acquisition engine.
+
+Every post should move customers through a journey:
+discover → trust → visit → return.
+
+</p>
+
+
+<div class="divider"></div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+🍽 Signature Food Content
+</h3>
+
+<p>
+
+High-quality food photography, featured dishes,
+seasonal menus and customer favourites designed
+to create cravings.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🎥 Short-Form Video
+</h3>
+
+<p>
+
+Reels and TikTok content showing preparation,
+behind-the-scenes moments and the personality
+behind the restaurant.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+❤️ Community Marketing
+</h3>
+
+<p>
+
+Show local partnerships, customer experiences,
+events and the story behind Zoila's Kitchen.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+📍 Local Discovery
+</h3>
+
+<p>
+
+Create content designed to reach Niagara locals
+and visitors searching for places to eat.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Google Search Growth Strategy
+</h2>
+
+
+<p>
+
+The goal:
+When someone searches for food in Niagara,
+Zoila's Kitchen becomes the restaurant they discover.
+
+</p>
+
+
+<div class="divider"></div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+Local SEO
+</h3>
+
+<p>
+
+Optimize Google Business Profile,
+restaurant categories,
+photos, reviews and location signals.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Search Keywords
+</h3>
+
+<p>
+
+Target searches such as:
+
+<br><br>
+
+"best restaurants Niagara Falls"
+
+<br>
+
+"restaurants near me"
+
+<br>
+
+"where to eat Niagara"
+
+<br>
+
+"family restaurants Niagara"
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Review Engine
+</h3>
+
+<p>
+
+Create a system that encourages happy customers
+to leave reviews after every visit.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Catering Revenue Machine
+</h2>
+
+
+<p>
+
+Transform catering from an occasional request
+into a predictable revenue stream.
+
+</p>
+
+
+
+<div class="divider"></div>
+
+
+<div class="funnel">
+
+
+<div class="step">
+
+🔎 Customer searches for catering
+
+</div>
+
+
+
+<div class="step">
+
+🌐 Dedicated Catering Landing Page
+
+</div>
+
+
+
+<div class="step">
+
+📝 Inquiry Form + Event Details
+
+</div>
+
+
+
+<div class="step">
+
+📧 Automated Follow-Up
+
+</div>
+
+
+
+<div class="step">
+
+🎉 Confirmed Catering Booking
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Customer Loyalty System
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="metric">
+01
+</div>
+
+<h3>
+Capture
+</h3>
+
+<p>
+
+Collect customer emails through reservations,
+online ordering and promotions.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="metric">
+02
+</div>
+
+<h3>
+Engage
+</h3>
+
+<p>
+
+Send birthday offers,
+special events,
+seasonal menus and promotions.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="metric">
+03
+</div>
+
+<h3>
+Retain
+</h3>
+
+<p>
+
+Turn first-time guests into loyal
+repeat customers.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+90 Day Implementation Roadmap
+</h2>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+Month 1
+
+<br>
+
+Foundation
+
+</h3>
+
+
+<p>
+
+✓ Digital audit
+
+<br>
+✓ Website strategy
+
+<br>
+✓ SEO research
+
+<br>
+✓ Content planning
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+Month 2
+
+<br>
+
+Launch
+
+</h3>
+
+
+<p>
+
+✓ Website redesign
+
+<br>
+✓ Google optimization
+
+<br>
+✓ Social content system
+
+<br>
+✓ Tracking setup
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h3>
+Month 3
+
+<br>
+
+Growth
+
+</h3>
+
+
+<p>
+
+✓ Paid campaigns
+
+<br>
+✓ Email marketing
+
+<br>
+✓ Review system
+
+<br>
+✓ Conversion optimization
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Digital Growth Partnership
+</h2>
+
+
+<p>
+
+Custom Exclusive Socials partners with businesses
+to create digital systems that attract customers,
+increase visibility and drive measurable growth.
+
+</p>
+
+
+
+<div class="divider"></div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+Website Transformation
+</h3>
+
+<p>
+
+A premium online experience
+designed to convert visitors.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Marketing Strategy
+</h3>
+
+<p>
+
+Content, SEO and campaigns
+built around business goals.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Growth Tracking
+</h3>
+
+<p>
+
+Analytics and optimization
+to continuously improve results.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<div class="logo">
+CUSTOM EXCLUSIVE SOCIALS
+</div>
+
+
+<h1>
+
+Make Zoila's Kitchen
+
+<br>
+
+<span class="gold">
+the restaurant people discover,
+choose and remember.
+
+</span>
+
+</h1>
+
+
+
+<p>
+
+A great restaurant deserves a digital experience
+as memorable as the food itself.
 
 </p>
 
 
 <a class="button">
-Let's Build Growth
+
+Start Building Growth
+
 </a>
 
 
@@ -606,16 +1351,29 @@ Let's Build Growth
 
 
 
+
 <footer>
+
 
 <h2>
 Zoila's Kitchen
 </h2>
 
+
 <p>
+
 Digital Growth Strategy Proposal
+
+<br><br>
+
+Prepared by
+
 <br>
-Prepared by Custom Exclusive Socials
+
+<strong class="gold">
+Custom Exclusive Socials
+</strong>
+
 </p>
 
 
@@ -623,5 +1381,7 @@ Prepared by Custom Exclusive Socials
 
 
 
+
 </body>
+
 </html>
