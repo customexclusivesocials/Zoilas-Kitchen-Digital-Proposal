@@ -1,465 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pitch Proposal | Zoila's Kitchen Digital Growth Strategy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-gold: #c49a45;
-            --primary-gold-hover: #b38936;
-            --charcoal: #1a1a1a;
-            --pitch-blue: #0f172a;
-            --light-bg: #fdfbf7;
-            --white: #ffffff;
-            --text-dark: #333333;
-            --text-muted: #64748b;
-            --font-serif: 'Playfair Display', Georgia, serif;
-            --font-sans: 'Plus Jakarta Sans', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Zoila's Kitchen | Digital Growth Strategy</title>
 
-        body {
-            font-family: var(--font-sans);
-            color: var(--text-dark);
-            background-color: var(--light-bg);
-            line-height: 1.6;
-        }
+<style>
 
-        /* Pitch Mode Notice Banner */
-        .pitch-badge {
-            background-color: var(--pitch-blue);
-            color: #38bdf8;
-            padding: 12px 5%;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #1e293b;
-        }
-        .pitch-badge strong { color: var(--white); }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-        /* Navigation */
-        header {
-            background-color: transparent;
-            position: absolute;
-            width: 100%;
-            z-index: 10;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            top: 45px;
-        }
+:root {
+    --black:#0b0b0b;
+    --gold:#c8a45d;
+    --cream:#f5efe5;
+    --gray:#1b1b1b;
+}
 
-        .logo {
-            font-family: var(--font-serif);
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
+body{
+    background:var(--black);
+    color:white;
+    font-family:Inter, sans-serif;
+}
 
-        .btn-nav {
-            background-color: var(--primary-gold);
-            color: var(--white) !important;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
+section{
+    min-height:100vh;
+    padding:100px 8%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 
-        /* Hero Preview */
-        .hero {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(rgba(26,26,26,0.75), rgba(26,26,26,0.75)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070') no-repeat center center/cover;
-        }
+h1,h2,h3{
+    font-family:"Playfair Display",serif;
+}
 
-        .hero-content { max-width: 900px; color: var(--white); }
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 4rem;
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .hero p { font-size: 1.3rem; margin-bottom: 35px; font-weight: 300; }
+h1{
+    font-size:clamp(50px,7vw,90px);
+    line-height:1.1;
+}
 
-        /* Strategy Section - The Pitch Core */
-        .strategy-section {
-            background-color: #0f172a;
-            color: var(--white);
-            padding: 100px 5%;
-        }
+h2{
+    font-size:50px;
+    margin-bottom:40px;
+}
 
-        .strategy-container { max-width: 1200px; margin: 0 auto; }
-        
-        .strategy-header {
-            text-align: center;
-            margin-bottom: 60px;
-            border-bottom: 1px solid #1e293b;
-            padding-bottom: 40px;
-        }
+p{
+    color:#cfcfcf;
+    font-size:18px;
+    line-height:1.7;
+}
 
-        .strategy-header h2 {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 15px;
-        }
 
-        .strategy-header p {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+/* HERO */
 
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
+.hero{
 
-        @media (max-width: 768px) {
-            .strategy-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.6rem; }
-            .strategy-header h2 { font-size: 2.2rem; }
-        }
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.9)
+),
+url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f")
+center/cover;
 
-        .strategy-card {
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 12px;
-            border-top: 4px solid var(--primary-gold);
-        }
+}
 
-        .strategy-card h3 {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #f8fafc;
-        }
+.gold{
+color:var(--gold);
+}
 
-        .strategy-card ul {
-            list-style: none;
-        }
+.subtitle{
+margin-top:30px;
+max-width:700px;
+}
 
-        .strategy-card li {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-            color: #cbd5e1;
-            font-size: 1.05rem;
-        }
 
-        .strategy-card li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-gold);
-            font-weight: bold;
-        }
+.button{
 
-        /* Lead Capture Interactive Mockup Block */
-        .demo-label {
-            display: inline-block;
-            background: #fef3c7;
-            color: #d97706;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+display:inline-block;
+margin-top:40px;
+padding:18px 40px;
+background:var(--gold);
+color:black;
+font-weight:600;
+border-radius:50px;
+text-decoration:none;
 
-        .lead-banner {
-            background-color: var(--white);
-            padding: 50px 5%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            max-width: 1100px;
-            margin: -60px auto 80px auto;
-            position: relative;
-            z-index: 5;
-            border-radius: 12px;
-        }
+}
 
-        .banner-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
 
-        @media (max-width: 768px) {
-            .banner-grid { grid-template-columns: 1fr; gap: 20px; }
-            .lead-banner { margin-top: 20px; max-width: 95%; }
-        }
+/* CARDS */
 
-        .banner-text h3 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: var(--charcoal);
-            margin-bottom: 10px;
-        }
 
-        .banner-text p { color: var(--text-muted); font-size: 1.05rem; }
+.grid{
 
-        .lead-form-inline { display: flex; gap: 10px; }
-        .lead-form-inline input {
-            flex: 1; padding: 15px 20px; border: 1px solid #cbd5e1;
-            border-radius: 50px; font-family: var(--font-sans); outline: none;
-        }
-        .lead-form-inline button {
-            background-color: var(--charcoal); color: var(--white);
-            border: none; padding: 15px 30px; border-radius: 50px;
-            font-weight: 600; cursor: pointer; transition: background 0.3s;
-        }
-        .lead-form-inline button:hover { background-color: var(--primary-gold); }
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 
-        /* Structural Framework Mockup */
-        .framework-section {
-            padding: 60px 5% 100px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+}
 
-        .framework-title {
-            text-align: center;
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-        }
 
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+.card{
 
-        .pillar-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            text-align: left;
-        }
+background:
+rgba(255,255,255,.06);
 
-        .pillar-card h4 {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--charcoal);
-        }
+border:1px solid rgba(255,255,255,.1);
 
-        .pillar-card p { color: var(--text-muted); font-size: 0.95rem; }
+padding:35px;
 
-        /* High Intent Engine Form */
-        .form-container {
-            background: var(--white);
-            max-width: 700px;
-            margin: 80px auto 0 auto;
-            padding: 50px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-        }
+border-radius:25px;
 
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 6px; outline: none;
-        }
+backdrop-filter:blur(10px);
 
-        .btn-submit {
-            width: 100%; background-color: var(--primary-gold); color: var(--white);
-            border: none; padding: 16px; border-radius: 6px; font-size: 1rem;
-            font-weight: 700; cursor: pointer; text-transform: uppercase;
-        }
+transition:.4s;
 
-        /* Pitch Footer */
-        footer {
-            background-color: #0b0f19;
-            color: #64748b;
-            padding: 60px 5% 40px 5%;
-            text-align: center;
-            font-size: 0.95rem;
-            border-top: 1px solid #1e293b;
-        }
+}
 
-        footer a { color: var(--primary-gold); text-decoration: none; font-weight: 600; }
-    </style>
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--gold);
+
+}
+
+
+
+.number{
+
+font-size:55px;
+font-weight:bold;
+color:var(--gold);
+
+}
+
+
+/* FUNNEL */
+
+
+.funnel{
+
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:600px;
+
+}
+
+
+.step{
+
+padding:25px;
+background:#161616;
+border-left:5px solid var(--gold);
+font-size:22px;
+
+}
+
+
+
+/* TIMELINE */
+
+
+.timeline{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+
+.phase{
+
+background:#151515;
+padding:30px;
+border-radius:20px;
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+padding:80px 8%;
+text-align:center;
+
+background:#050505;
+
+}
+
+
+@media(max-width:700px){
+
+section{
+padding:70px 5%;
+}
+
+h2{
+font-size:36px;
+}
+
+}
+
+</style>
+
 </head>
+
+
 <body>
 
-    <!-- Pitch Status Bar -->
-    <div class="pitch-badge">
-        🎯 <strong>GROWTH PROPOSAL:</strong> Crafted exclusively for Zoila's Kitchen to capture hyper-local demand in Welland.
-    </div>
 
-    <!-- Future Website Header Framework -->
-    <header>
-        <div class="logo">ZOILA'S KITCHEN</div>
-        <ul class="nav-links">
-            <li><a href="#strategy">Growth Strategy</a></li>
-            <li><a href="#pillars">Menu Pillars</a></li>
-            <li><a href="#lead-engine">Lead Engine</a></li>
-            <li><a href="#lead-engine" class="btn-nav">Order Prototype</a></li>
-        </ul>
-    </header>
+<section class="hero">
 
-    <!-- Future Website Hero Layout Preview -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Delicious Meals<br>for Every Event</h1>
-            <p>Wholesome Catering and Meal Prep Crafted for Every Table in Welland, Ontario</p>
-            <a href="#lead-engine" class="btn-hero">Explore Customisable Menu Options</a>
-        </div>
-    </section>
+<p class="gold">
+DIGITAL GROWTH STRATEGY
+</p>
 
-    <!-- Dynamic Lead Generation Strategy Block -->
-    <section class="strategy-section" id="strategy">
-        <div class="strategy-container">
-            <div class="strategy-header">
-                <h2>The Growth Blueprint</h2>
-                <p>An integrated digital marketing blueprint engineered to turn local search interest into high-value catering contracts and predictable weekly meal prep revenue.</p>
-            </div>
+<h1>
+Transforming<br>
+Zoila's Kitchen<br>
+into a <span class="gold">digital destination</span>
+</h1>
 
-            <div class="strategy-grid">
-                <!-- Pillar 1: Digital Marketing Strategy -->
-                <div class="strategy-card">
-                    <h3>1. Digital Marketing Strategy</h3>
-                    <ul>
-                        <li><strong>Hyper-Local SEO Dominance:</strong> Optimize the digital footprint around high-intent keywords like "Catering in Welland" and "Niagara Region Meal Prep" to pull free organic traffic directly from Google Maps.</li>
-                        <li><strong>The Social Drop Sequence:</strong> Utilize organic, short-form reels showcasing fresh food preparation to build anticipation before weekly menus go live.</li>
-                        <li><strong>Geo-Fenced Social Ads:</strong> Deploy targeted awareness campaigns specifically mapped to busy residential nodes and commercial hubs within a 25km radius of Welland.</li>
-                    </ul>
-                </div>
+<p class="subtitle">
 
-                <!-- Pillar 2: Lead Generation Plan -->
-                <div class="strategy-card">
-                    <h3>2. Lead Generation Plan</h3>
-                    <ul>
-                        <li><strong>The High-Value Hook:</strong> Transition casual visitors into recurring leads using friction-free instant conversion assets (like the 5-for-$100 intro offer mock below).</li>
-                        <li><strong>Segmented Audience Nurturing:</strong> Automatically bucket prospects into specific paths (Corporate/Event Planners vs. Weekly Family Meal Prep) to trigger relevant, high-converting email follow-ups.</li>
-                        <li><strong>Low-Friction Quote Funnels:</strong> Replace generic contact forms with an interactive menu builder to capture precise dietary and capacity data early.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+A complete strategy designed to increase reservations,
+online orders, catering inquiries, customer loyalty,
+and local search visibility.
 
-    <!-- Live Preview: High-Value Hook Asset -->
-    <section style="padding: 20px 5% 0 5%; text-align: center;">
-        <span class="demo-label">Live Lead-Gen Asset Component Showcase</span>
-    </section>
-    
-    <section class="lead-banner">
-        <div class="banner-grid">
-            <div class="banner-text">
-                <h3>5 Customisable Meals For $100</h3>
-                <p>Unlock <strong>10% off</strong> your first order and stay ahead with exclusive, weekly menu drops straight to your inbox.</p>
-            </div>
-            <div class="banner-form">
-                <form class="lead-form-inline" onsubmit="event.preventDefault(); alert('Demo: This safely captures the lead and puts them into your CRM funnel!');">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">Claim Offer</button>
-                </form>
-            </div>
-        </div>
-    </section>
+</p>
 
-    <!-- Live Preview: Menu / Service Pillars Layout -->
-    <section class="framework-section" id="pillars">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <span class="demo-label">Core Business Architecture Layout</span>
-        </div>
-        <h2 class="framework-title">Designed to Serve Every Table</h2>
-        
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <h4>Weekly Meal Prep</h4>
-                <p>Balanced, nourishing dishes crafted with natural flavours for local professionals, students, and active families tracking lifestyle routines.</p>
-            </div>
-            <div class="pillar-card">
-                <h4>Intimate Catering</h4>
-                <p>Bespoke culinary coordination tailored elegantly to milestones, corporate gatherings, and boutique celebrations across the Niagara Region.</p>
-            </div>
-            <div class="pillar-card">
-                <h4>Senior & Student Packs</h4>
-                <p>Generous, easily customisable portions structured intentionally to respect specific dietary profiles and budget-friendly constraints.</p>
-            </div>
-        </div>
 
-        <!-- High Intent Form Engine Layout -->
-        <div class="form-container" id="lead-engine">
-            <div style="text-align: center; margin-bottom: 25px;">
-                <span class="demo-label">Interactive Quote Funnel Mockup</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-top: 10px;">Request a Personalised Menu Quote</h3>
-            </div>
-            
-            <form onsubmit="event.preventDefault(); alert('Demo submission successful! High-intent data has been catalogued.');">
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="john@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Requested Service Stream</label>
-                    <select>
-                        <option>Weekly Meal Prep Package (5 for $100 Intro)</option>
-                        <option>Bespoke Event Catering Consultation</option>
-                        <option>Senior Balanced Nutrition Solutions</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Dietary Preferences or Special Instructions</label>
-                    <textarea rows="3" placeholder="Allergies, preferences, or specific goals..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Generate Custom Quote</button>
-            </form>
-        </div>
-    </section>
+<a class="button">
+View Growth Plan
+</a>
 
-    <!-- Pitch Specific Architectural Footer -->
-    <footer>
-        <p>Proposed Web Experience & Growth Architecture for <strong>Zoila's Kitchen</strong>.</p>
-        <p style="margin-top: 15px; font-size: 0.85rem; color: #475569;">
-            Strategy Conceptualised & Engineered by <a href="#" target="_blank">Custom Exclusive Socials</a>. All rights reserved.
-        </p>
-    </footer>
+</section>
+
+
+
+
+<section>
+
+<h2>
+Current Digital Opportunity
+</h2>
+
+
+<div class="grid">
+
+<div class="card">
+<div class="number">63%</div>
+<p>Website conversion opportunity</p>
+</div>
+
+
+<div class="card">
+<div class="number">41%</div>
+<p>SEO visibility opportunity</p>
+</div>
+
+
+<div class="card">
+<div class="number">★★★★★</div>
+<p>Strong reputation foundation</p>
+</div>
+
+
+<div class="card">
+<div class="number">∞</div>
+<p>Potential customer growth</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<section>
+
+<h2>
+Growth Opportunities
+</h2>
+
+
+<div class="grid">
+
+<div class="card">
+<h3>Website Experience</h3>
+<p>
+Create a premium website experience
+that turns visitors into reservations.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Catering Funnel</h3>
+<p>
+Build a dedicated catering system
+to capture larger orders.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Local SEO</h3>
+<p>
+Increase visibility for restaurant searches
+through Google optimization.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Customer Retention</h3>
+<p>
+Create email and loyalty systems
+that bring customers back.
+</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<h2>
+High-Converting Website Blueprint
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+<h3>Homepage</h3>
+<p>
+Luxury visuals, story, reviews,
+menu highlights and reservations.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Menu Experience</h3>
+<p>
+Mobile-friendly ordering experience
+built around conversions.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Catering Page</h3>
+<p>
+Dedicated landing page designed
+to generate inquiries.
+</p>
+</div>
+
+
+<div class="card">
+<h3>SEO Pages</h3>
+<p>
+Rank for local restaurant searches.
+</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<h2>
+Customer Growth Funnel
+</h2>
+
+
+<div class="funnel">
+
+<div class="step">
+Google Search
+</div>
+
+<div class="step">
+Website Visit
+</div>
+
+<div class="step">
+Reservation / Online Order
+</div>
+
+<div class="step">
+Email Capture
+</div>
+
+<div class="step">
+Offers + Loyalty Marketing
+</div>
+
+<div class="step">
+Repeat Customer + Reviews
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<h2>
+Marketing Strategy
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>Social Media</h3>
+
+<p>
+Behind-the-scenes content,
+chef storytelling,
+customer reactions,
+food videos and community content.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Paid Advertising</h3>
+
+<p>
+Google Ads + Meta campaigns
+targeting hungry local customers.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Email Marketing</h3>
+
+<p>
+Birthday offers,
+special events,
+holiday promotions.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+90 Day Growth Roadmap
+</h2>
+
+
+<div class="timeline">
+
+
+<div class="phase">
+
+<h3>Month 1</h3>
+
+<p>
+Audit website,
+SEO,
+branding,
+customer journey.
+</p>
+
+</div>
+
+
+<div class="phase">
+
+<h3>Month 2</h3>
+
+<p>
+Launch redesign,
+content strategy,
+Google optimization.
+</p>
+
+</div>
+
+
+
+<div class="phase">
+
+<h3>Month 3</h3>
+
+<p>
+Launch campaigns,
+email systems,
+conversion tracking.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+<h2>
+The Opportunity
+</h2>
+
+
+<p>
+
+Zoila's Kitchen already has the most important ingredient:
+a strong product and customer experience.
+
+The next step is building a digital system
+that consistently attracts, converts and retains customers.
+
+</p>
+
+
+<a class="button">
+Let's Build Growth
+</a>
+
+
+</section>
+
+
+
+
+<footer>
+
+<h2>
+Zoila's Kitchen
+</h2>
+
+<p>
+Digital Growth Strategy Proposal
+<br>
+Prepared by Custom Exclusive Socials
+</p>
+
+
+</footer>
+
+
 
 </body>
 </html>
