@@ -1,660 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoila's Kitchen — 90-Day Digital Growth Strategy & Design Pitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #c49a45;
+            --primary-gold-hover: #b38936;
+            --charcoal: #111111;
+            --slate-dark: #0f172a;
+            --slate-card: #1e293b;
+            --light-bg: #fdfbf7;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --text-dark: #222222;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<title>
-Zoila's Kitchen | Digital Growth Strategy
-</title>
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
 
+        /* Utility Components */
+        .section-padding { padding: 100px 5%; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .text-center { text-align: center; }
+        
+        .pitch-label {
+            display: inline-block;
+            background: #fef3c7;
+            color: #d97706;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+        .heading-serif {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        .subheading-sans {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            font-size: 1.15rem;
+            font-weight: 400;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        /* Header Navigation */
+        header {
+            background-color: var(--charcoal);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222222;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-family: var(--font-serif); color: var(--white); font-size: 1.4rem; font-weight: 700; }
+        .meta-badge { background: var(--primary-gold); color: var(--white); padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
 
+        /* Step Down / Funnel Connectors */
+        .funnel-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 40px auto;
+            max-width: 500px;
+        }
+        .funnel-step {
+            width: 100%;
+            background: var(--white);
+            padding: 16px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-gold);
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+        .funnel-arrow { color: var(--primary-gold); font-size: 1.5rem; font-weight: bold; }
 
-<link rel="stylesheet" href="css/style.css">
+        /* Section 03 — Cards Grid */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .challenge-card {
+            background: var(--white);
+            padding: 35px 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+        .challenge-card:hover { transform: translateY(-5px); }
+        .challenge-card h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 12px; color: var(--charcoal); }
+        .challenge-card p { color: var(--text-muted); font-size: 0.95rem; }
 
+        /* Section 04 — Before vs After Journey Matrix */
+        .comparison-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 768px) { .comparison-wrapper { grid-template-columns: 1fr; } }
+        .journey-column { background: var(--white); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .journey-column.dark-theme { background: var(--slate-dark); color: var(--white); border: none; }
+        .journey-column h3 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 25px; }
 
-</head>
-  :root{
-    --ink:#2b1d14;
-    --ink-soft:#4a382b;
-    --paper:#f1e9d6;
-    --paper-light:#fbf6ea;
-    --paper-dark:#e7dcc0;
-    --paprika:#a3341f;
-    --paprika-dark:#7e2717;
-    --brass:#b8863b;
-    --sage:#59684a;
-    --line:rgba(43,29,20,0.16);
-    --shadow:0 18px 40px -20px rgba(43,29,20,0.45);
-    --maxw:1180px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--ink);
-    font-family:'Karla',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection{background:var(--paprika);color:var(--paper-light);}
+        /* Section 05 — Concept Interface Mockup Frame */
+        .mockup-browser {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .browser-chrome {
+            background: #f1f5f9;
+            padding: 12px 20px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .chrome-dot { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e1; }
+        .mockup-hero {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070') no-repeat center center/cover;
+            padding: 100px 40px;
+            color: var(--white);
+        }
+        .mockup-hero h2 { font-family: var(--font-serif); font-size: 3.5rem; line-height: 1.1; margin: 15px 0; }
+        .mockup-hero p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; font-weight: 300; color: #f1f5f9; }
+        .mockup-ctas .btn {
+            display: inline-block; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 5px; font-size: 0.95rem;
+        }
+        .btn-gold { background: var(--primary-gold); color: var(--white); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); }
+        .mockup-pillars { display: grid; grid-template-columns: repeat(4, 1fr); background: #f8fafc; border-top: 1px solid var(--border-color); }
+        @media (max-width: 640px) { .mockup-pillars { grid-template-columns: 1fr 1fr; } }
+        .pillar-nav-item { padding: 25px 15px; border-right: 1px solid var(--border-color); font-family: var(--font-serif); font-weight: 600; color: var(--charcoal); }
 
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:0.16em;
-    font-size:11.5px;
-    font-weight:500;
-    color:var(--paprika);
-  }
-  h1,h2,h3{
-    font-family:'Newsreader',serif;
-    font-weight:500;
-    line-height:1.05;
-    margin:0;
-    color:var(--ink);
-  }
-  p{line-height:1.65;}
-  a{color:inherit;}
+        /* Section 06 — Dark Matrix Strategy Canvas */
+        .dark-canvas { background: var(--slate-dark); color: var(--white); }
+        .dark-canvas .heading-serif { color: var(--white); }
+        .dark-canvas .funnel-step { background: var(--slate-card); color: var(--white); border-left-color: var(--primary-gold); }
 
-  /* ===== NAV ===== */
-  .nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(43,29,20,0.94);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(241,233,214,0.15);
-  }
-  .nav-inner{
-    max-width:var(--maxw);margin:0 auto;padding:14px 28px;
-    display:flex;align-items:center;justify-content:space-between;
-    color:var(--paper-light);
-  }
-  .nav-brand{font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:var(--paper-light);}
-  .nav-links{display:flex;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
-  .nav-links a{text-decoration:none;color:rgba(241,233,214,0.65);transition:color .2s;}
-  .nav-links a:hover{color:var(--paper-light);}
-  .nav-cta{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
-    background:var(--paprika);color:var(--paper-light);padding:9px 16px;border-radius:2px;text-decoration:none;
-    white-space:nowrap;
-  }
-  @media (max-width:760px){ .nav-links{display:none;} }
+        /* Section 07 & 08 Grid Cards */
+        .strategy-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .feature-card { background: var(--white); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .feature-card h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 15px; color: var(--charcoal); }
+        .feature-card ul { list-style: none; margin-top: 15px; }
+        .feature-card li { padding: 8px 0 8px 25px; position: relative; color: var(--text-muted); font-size: 0.95rem; }
+        .feature-card li::before { content: "→"; position: absolute; left: 0; color: var(--primary-gold); font-weight: bold; }
 
-  section{position:relative;}
+        /* Section 09 — Social Pillars Layout */
+        .social-pillars-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .social-pillar-item { background: var(--white); border: 1px solid var(--border-color); border-radius: 6px; padding: 25px; text-align: left; }
+        .social-pillar-item h4 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--charcoal); margin-bottom: 8px; }
+        .social-pillar-item p { color: var(--text-muted); font-size: 0.9rem; }
 
-  /* ===== HERO ===== */
-  .hero{
-    background:
-      radial-gradient(ellipse at 20% -10%, rgba(184,134,59,0.18), transparent 55%),
-      radial-gradient(ellipse at 85% 110%, rgba(163,52,31,0.22), transparent 50%),
-      var(--ink);
-    padding:110px 24px 130px;
-    display:flex;justify-content:center;
-  }
-  .menu-cover{
-    max-width:640px;width:100%;
-    background:var(--paper);
-    border-radius:2px;
-    padding:56px 48px 48px;
-    box-shadow:var(--shadow);
-    position:relative;
-    transform:rotate(-0.6deg);
-    border:1px solid var(--paper-dark);
-  }
-  .menu-cover::before{
-    content:"";position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none;
-  }
-  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:38px;}
-  .cover-stamp{
-    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--ink-soft);
-    border:1px solid var(--ink-soft);border-radius:50%;
-    width:74px;height:74px;display:flex;align-items:center;justify-content:center;text-align:center;
-    transform:rotate(8deg);opacity:0.75;line-height:1.3;
-  }
-  .cover-title{text-align:center;}
-  .cover-title .eyebrow{display:block;margin-bottom:14px;}
-  .cover-title h1{font-size:clamp(38px,7vw,58px);font-style:italic;}
-  .cover-title .amp{color:var(--paprika);}
-  .cover-sub{
-    text-align:center;margin:18px auto 0;max-width:420px;color:var(--ink-soft);font-size:15.5px;
-  }
-  .cover-divider{
-    display:flex;align-items:center;gap:12px;margin:34px 0;color:var(--brass);
-  }
-  .cover-divider .ln{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--brass) 0 6px, transparent 6px 11px);}
-  .cover-divider span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;}
-  .toc{list-style:none;margin:0;padding:0;}
-  .toc li{
-    display:flex;justify-content:space-between;align-items:baseline;
-    padding:9px 0;border-bottom:1px dotted var(--line);
-    font-family:'Newsreader',serif;font-size:16.5px;color:var(--ink);
-  }
-  .toc li span.num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--paprika);margin-right:10px;}
-  .toc li span.pg{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);}
-  .cover-foot{
-    margin-top:30px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);
-    letter-spacing:0.04em;
-  }
-  .scroll-cue{
-    display:flex;justify-content:center;margin-top:44px;color:rgba(241,233,214,0.55);
-    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
-    flex-direction:column;align-items:center;gap:8px;
-  }
+        /* Section 11 — Roadmap Visuals */
+        .roadmap-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        @media (max-width: 768px) { .roadmap-timeline { grid-template-columns: 1fr; } }
+        .roadmap-phase { background: var(--white); padding: 35px; border-radius: 8px; border-top: 4px solid var(--primary-gold); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .roadmap-phase h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 20px; }
+        .roadmap-phase ul { list-style: none; }
+        .roadmap-phase li { padding: 6px 0 6px 25px; position: relative; color: var(--text-muted); }
+        .roadmap-phase li::before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: bold; }
 
-  /* ===== GENERIC SECTION WRAP ===== */
-  .wrap{
-    background:var(--paper);
-    padding:100px 24px;
-  }
-  .wrap.dark{background:var(--ink);color:var(--paper-light);}
-  .wrap.dark h2, .wrap.dark h3{color:var(--paper-light);}
-  .inner{max-width:var(--maxw);margin:0 auto;}
-  .head-row{
-    display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px;flex-wrap:wrap;
-  }
-  .head-row h2{font-size:clamp(30px,4.4vw,44px);font-style:italic;}
-  .head-row .eyebrow{margin-bottom:10px;display:block;}
-  .head-note{max-width:340px;font-size:14.5px;color:var(--ink-soft);}
-  .wrap.dark .head-note{color:rgba(241,233,214,0.65);}
+        /* Section 12 — Side by Side Pricing Matrix */
+        .investment-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 950px; margin: 0 auto; align-items: stretch; }
+        @media (max-width: 768px) { .investment-matrix { grid-template-columns: 1fr; } }
+        .pricing-tier { background: var(--white); padding: 50px 40px; border-radius: 12px; border: 1px solid var(--border-color); position: relative; display: flex; flex-direction: column; }
+        .pricing-tier.featured { background: var(--slate-dark); color: var(--white); border: none; }
+        .pricing-tier.featured .tier-title { color: var(--white); }
+        .pricing-tier.featured .price { color: var(--primary-gold); }
+        .pricing-tier.featured li { color: #cbd5e1; }
+        .tier-title { font-family: var(--font-serif); font-size: 1.8rem; color: var(--charcoal); margin-bottom: 10px; }
+        .price { font-size: 2.5rem; font-weight: 700; color: var(--charcoal); margin-bottom: 25px; }
+        .pricing-tier ul { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+        .pricing-tier li { padding: 10px 0 10px 25px; position: relative; border-bottom: 1px solid #f1f5f9; }
+        .pricing-tier.featured li { border-bottom: 1px solid #1e293b; }
+        .pricing-tier li::before { content: "✓"; position: absolute; left: 0; color: var(--primary-gold); font-weight: bold; }
 
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-
-  /* ===== THE READ (situation) ===== */
-  .read-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
-  @media (max-width:800px){.read-grid{grid-template-columns:1fr;}}
-  .read-col h3{font-size:20px;font-style:italic;margin-bottom:14px;}
-  .read-col ul{margin:0;padding:0;list-style:none;}
-  .read-col li{
-    padding:14px 0 14px 26px;border-top:1px solid var(--line);position:relative;font-size:15px;color:var(--ink-soft);
-  }
-  .read-col li:last-child{border-bottom:1px solid var(--line);}
-  .read-col li::before{
-    content:"—";position:absolute;left:0;color:var(--paprika);
-  }
-  .read-col.win li::before{content:"+";color:var(--sage);}
-  .read-col.gap li::before{content:"–";color:var(--paprika);}
-
-  /* ===== PERSONAS ===== */
-  .persona-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  @media (max-width:900px){.persona-strip{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:520px){.persona-strip{grid-template-columns:1fr;}}
-  .persona-card{
-    background:var(--paper-light);border:1px solid var(--paper-dark);border-radius:2px;padding:24px 20px;
-  }
-  .persona-card .tag{
-    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass);
-    display:block;margin-bottom:10px;
-  }
-  .persona-card h3{font-size:19px;font-style:italic;margin-bottom:8px;}
-  .persona-card p{font-size:13.8px;color:var(--ink-soft);margin:0;}
-
-  /* ===== THE MENU (course cards) ===== */
-  .courses{display:flex;flex-direction:column;gap:0;}
-  .course{
-    display:grid;grid-template-columns:120px 1fr;gap:32px;
-    padding:40px 0;border-top:1px solid var(--line);position:relative;
-  }
-  .courses .course:last-child{border-bottom:1px solid var(--line);}
-  @media (max-width:720px){.course{grid-template-columns:1fr;gap:14px;}}
-  .course-no{
-    font-family:'IBM Plex Mono',monospace;color:var(--paprika);
-  }
-  .course-no .n{font-size:34px;display:block;line-height:1;}
-  .course-no .lbl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);}
-  .course-body h3{font-size:24px;font-style:italic;margin-bottom:6px;}
-  .course-body .sub{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;display:block;}
-  .course-body p.desc{color:var(--ink-soft);font-size:15px;max-width:640px;margin:0 0 18px;}
-  .tactics{display:flex;flex-wrap:wrap;gap:10px;}
-  .tactic{
-    font-size:12.8px;background:var(--paper-dark);border:1px solid var(--line);border-radius:20px;
-    padding:6px 14px;color:var(--ink);
-  }
-
-  /* ===== SERVICE FLOW (funnel) ===== */
-  .flow-rail{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;
-  }
-  @media (max-width:900px){.flow-rail{grid-template-columns:1fr;gap:14px;}}
-  .flow-rail::before{
-    content:"";position:absolute;top:34px;left:6%;right:6%;height:1px;
-    background:repeating-linear-gradient(90deg,var(--brass) 0 8px, transparent 8px 14px);
-    z-index:0;
-  }
-  @media (max-width:900px){.flow-rail::before{display:none;}}
-  .flow-stop{position:relative;z-index:1;padding:0 14px;text-align:center;}
-  @media (max-width:900px){.flow-stop{text-align:left;padding:16px;background:var(--paper-light);border:1px solid var(--paper-dark);}}
-  .flow-dot{
-    width:14px;height:14px;border-radius:50%;background:var(--paprika);margin:26px auto 18px;
-    box-shadow:0 0 0 5px var(--paper);
-  }
-  @media (max-width:900px){.flow-dot{margin:0 0 10px;}}
-  .flow-stop h3{font-size:18px;font-style:italic;margin-bottom:8px;}
-  .flow-stop p{font-size:13px;color:var(--ink-soft);margin:0;}
-
-  /* ===== PREP SCHEDULE (roadmap) ===== */
-  .schedule{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:860px){.schedule{grid-template-columns:1fr;}}
-  .sched-card{
-    background:rgba(241,233,214,0.05);border:1px solid rgba(241,233,214,0.18);border-radius:2px;padding:28px 24px;
-  }
-  .sched-card .month{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass);}
-  .sched-card h3{font-size:22px;font-style:italic;margin:8px 0 16px;color:var(--paper-light);}
-  .sched-card ul{margin:0;padding:0;list-style:none;}
-  .sched-card li{
-    font-size:13.8px;color:rgba(241,233,214,0.72);padding:9px 0;border-top:1px solid rgba(241,233,214,0.12);
-  }
-  .sched-card li:first-of-type{border-top:none;}
-
-  /* ===== THE CHECK (pricing) ===== */
-  .receipt-wrap{display:flex;justify-content:center;}
-  .receipt{
-    max-width:460px;width:100%;background:var(--paper-light);border:1px solid var(--paper-dark);
-    padding:36px 34px 28px;box-shadow:var(--shadow);
-    font-family:'IBM Plex Mono',monospace;
-  }
-  .receipt h3{font-family:'Newsreader',serif;font-style:italic;text-align:center;font-size:24px;margin-bottom:4px;}
-  .receipt .rsub{text-align:center;font-size:11px;color:var(--ink-soft);margin-bottom:22px;letter-spacing:0.04em;}
-  .rline{display:flex;justify-content:space-between;font-size:13px;padding:9px 0;border-bottom:1px dashed var(--line);gap:12px;}
-  .rline span:first-child{color:var(--ink-soft);max-width:280px;}
-  .rline span:last-child{white-space:nowrap;}
-  .rtotal{display:flex;justify-content:space-between;font-size:16px;padding:16px 0 4px;margin-top:6px;border-top:1px solid var(--ink);font-weight:600;}
-  .rnote{font-size:10.5px;color:var(--ink-soft);margin-top:16px;line-height:1.6;text-align:center;}
-  .rcut{
-    text-align:center;margin-top:24px;letter-spacing:6px;color:var(--paper-dark);font-size:11px;overflow:hidden;
-  }
-
-  /* ===== PROJECTED YIELD (kpis) ===== */
-  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  @media (max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:520px){.kpi-grid{grid-template-columns:1fr;}}
-  .kpi-card{
-    padding:26px 22px;border:1px solid var(--line);border-radius:2px;background:var(--paper-light);
-  }
-  .kpi-card .num{font-family:'Newsreader',serif;font-style:italic;font-size:38px;color:var(--paprika);display:block;}
-  .kpi-card .lbl{font-size:13px;color:var(--ink-soft);margin-top:6px;display:block;}
-  .kpi-disclaimer{margin-top:26px;font-size:11.5px;color:var(--ink-soft);max-width:640px;}
-
-  /* ===== CTA / RESERVE ===== */
-  .cta-wrap{
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(163,52,31,0.35), transparent 55%),
-      var(--ink);
-    padding:120px 24px;text-align:center;
-  }
-  .cta-wrap .eyebrow{color:var(--brass);}
-  .cta-wrap h2{color:var(--paper-light);font-size:clamp(32px,5.5vw,52px);font-style:italic;margin:16px 0 20px;}
-  .cta-wrap p{color:rgba(241,233,214,0.7);max-width:480px;margin:0 auto 34px;font-size:15.5px;}
-  .cta-btn{
-    display:inline-block;background:var(--paprika);color:var(--paper-light);text-decoration:none;
-    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;
-    padding:16px 30px;border-radius:2px;transition:background .2s;
-  }
-  .cta-btn:hover{background:var(--paprika-dark);}
-
-  footer{
-    background:var(--ink);border-top:1px solid rgba(241,233,214,0.12);
-    padding:28px 24px;text-align:center;
-    font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(241,233,214,0.45);letter-spacing:0.04em;
-  }
-</style>
+        /* Section 13 — Impact Outro Section */
+        .closing-section { background: #0b0f19; color: var(--white); padding: 120px 5%; }
+        .closing-box { max-width: 800px; margin: 0 auto; }
+        .closing-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 30px 0; border-bottom: 1px solid #1e293b; align-items: center; text-align: left; }
+        .closing-row h3 { font-family: var(--font-serif); font-size: 1.8rem; color: #94a3b8; font-weight: 400; }
+        .closing-row p { font-family: var(--font-serif); font-size: 2.2rem; color: var(--primary-gold); font-weight: 600; }
+        
+        footer { background: #070a12; color: #475569; padding: 40px 5%; text-align: center; font-size: 0.9rem; }
+        footer a { color: var(--primary-gold); text-decoration: none; font-weight: 600; }
+    </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-brand">Zoila's Kitchen</div>
-    <div class="nav-links">
-      <a href="#read">The Read</a>
-      <a href="#menu">The Menu</a>
-      <a href="#flow">Service Flow</a>
-      <a href="#schedule">Prep Schedule</a>
-      <a href="#check">The Check</a>
-    </div>
-    <a class="nav-cta" href="#reserve">Reserve a Call</a>
-  </div>
-</nav>
+    <!-- Pitch Framework Header -->
+    <header>
+        <div class="logo">ZOILA'S KITCHEN</div>
+        <div class="meta-badge">90-DAY STRATEGY FRAMEWORK</div>
+    </header>
 
-<section class="hero">
-  <div class="menu-cover">
-    <div class="cover-top">
-      <span class="eyebrow" style="margin-top:6px;">Prepared for</span>
-      <div class="cover-stamp">EST.<br>2026<br>WELLAND ON</div>
-    </div>
-    <div class="cover-title">
-      <span class="eyebrow">A Digital Marketing &amp; Lead Generation Tasting Menu</span>
-      <h1>The Growth <span class="amp">Menu</span></h1>
-      <p class="cover-sub">A six-course strategy for Zoila's Kitchen — turning Welland's best-kept family recipe into the region's most-booked meal prep &amp; catering table.</p>
-    </div>
-    <div class="cover-divider"><div class="ln"></div><span>Bill of Fare</span><div class="ln"></div></div>
-    <ul class="toc">
-      <li><span><span class="num">01</span>The Read — Where the Kitchen Stands Today</span><span class="pg">pg. 1</span></li>
-      <li><span><span class="num">02</span>Your Guests — Who's Actually Hungry</span><span class="pg">pg. 2</span></li>
-      <li><span><span class="num">03</span>The Menu — Six Courses of Strategy</span><span class="pg">pg. 3</span></li>
-      <li><span><span class="num">04</span>Service Flow — From Stranger to Regular</span><span class="pg">pg. 4</span></li>
-      <li><span><span class="num">05</span>Prep Schedule — The First 90 Days</span><span class="pg">pg. 5</span></li>
-      <li><span><span class="num">06</span>The Check — Investment &amp; Terms</span><span class="pg">pg. 6</span></li>
-    </ul>
-    <div class="cover-foot">Chef Zoila &nbsp;·&nbsp; Welland, Ontario &nbsp;·&nbsp; zoilaskitchen.ca</div>
-  </div>
-</section>
-<div style="background:var(--ink);text-align:center;">
-  <div class="scroll-cue" style="padding-bottom:64px;">
-    <span>Begin Tasting</span>
-    <span>↓</span>
-  </div>
-</div>
-
-<!-- ================= THE READ ================= -->
-<section class="wrap" id="read">
-  <div class="inner">
-    <div class="head-row reveal">
-      <div>
-        <span class="eyebrow">Course 01 — The Read</span>
-        <h2>Where the kitchen stands today</h2>
-      </div>
-      <p class="head-note">Zoila's Kitchen already has the hardest part — a genuine, recipe-driven story, real reviews, and four real service lines. The opportunity is making that story impossible to miss in Welland &amp; Niagara search and social feeds.</p>
-    </div>
-    <div class="read-grid">
-      <div class="read-col win reveal">
-        <h3>What's already working</h3>
-        <ul>
-          <li>A warm, founder-led brand story — Chef Zoila's voice comes through on every page, which builds trust faster than any stock-photo competitor.</li>
-          <li>Four distinct offers already exist: weekly meal prep, student packages, senior meal solutions, and intimate event catering — a full menu of price points and audiences.</li>
-          <li>A live, modern website with a working quote-request path and a testimonials page — the bones of a lead-gen engine are already in place.</li>
-        </ul>
-      </div>
-      <div class="read-col gap reveal">
-        <h3>Where the opportunity sits</h3>
-        <ul>
-          <li>No visible Google Business Profile presence in "meal prep near me" or "catering Welland" searches — the single highest-intent local search moment.</li>
-          <li>Social channels are underused as a discovery engine — food is inherently visual, and there's no consistent posting or short-video system converting scrollers into inquiries.</li>
-          <li>No structured way to turn a one-time catering guest into a recurring weekly meal-prep subscriber — the highest-value customer type is being left on the table.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PERSONAS ================= -->
-<section class="wrap" style="background:var(--paper-dark);" id="guests">
-  <div class="inner">
-    <div class="head-row reveal">
-      <div>
-        <span class="eyebrow">Course 02 — Your Guests</span>
-        <h2>Who's actually hungry</h2>
-      </div>
-      <p class="head-note">Every course on this menu is built around four real Niagara-region guests — not generic personas.</p>
-    </div>
-    <div class="persona-strip reveal">
-      <div class="persona-card">
-        <span class="tag">Weekly Regular</span>
-        <h3>The Busy Household</h3>
-        <p>Dual-income Welland &amp; Niagara families who want home-cooked dinners without the Sunday prep marathon. Books weekly, values consistency.</p>
-      </div>
-      <div class="persona-card">
-        <span class="tag">Campus Crowd</span>
-        <h3>The Niagara College Student</h3>
-        <p>Time-poor, budget-conscious, discovered almost entirely through Instagram/TikTok — needs affordable, filling, easy-to-order packages.</p>
-      </div>
-      <div class="persona-card">
-        <span class="tag">Caring Adult Child</span>
-        <h3>The Senior's Family</h3>
-        <p>Often books on behalf of a parent. Searches Google, reads reviews carefully, and values a phone number that's easy to find and a real human to talk to.</p>
-      </div>
-      <div class="persona-card">
-        <span class="tag">Occasion Planner</span>
-        <h3>The Event Host</h3>
-        <p>Planning a shower, milestone birthday, or family gathering. Browses the catering menu in detail and compares 2–3 caterers before requesting a quote.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= THE MENU (courses) ================= -->
-<section class="wrap" id="menu">
-  <div class="inner">
-    <div class="head-row reveal">
-      <div>
-        <span class="eyebrow">Course 03 — The Menu</span>
-        <h2>Six courses of strategy</h2>
-      </div>
-      <p class="head-note">Each course is a self-contained channel with its own tactics — served in sequence, but built to compound.</p>
-    </div>
-    <div class="courses">
-
-      <div class="course reveal">
-        <div class="course-no"><span class="n">01</span><span class="lbl">Amuse-Bouche</span></div>
-        <div class="course-body">
-          <span class="sub">Local Search &amp; Google Business Profile</span>
-          <h3>Get found first, before the recipe even matters</h3>
-          <p class="desc">"Meal prep near me" and "catering Welland" are the two highest-intent phrases in this business — right now Zoila's Kitchen is nearly invisible for both. This course claims the map pack.</p>
-          <div class="tactics">
-            <span class="tactic">Google Business Profile build-out</span>
-            <span class="tactic">Service-area &amp; category optimization</span>
-            <span class="tactic">Weekly photo &amp; post cadence</span>
-            <span class="tactic">On-site local SEO (Welland, Niagara, St. Catharines)</span>
-          </div>
+    <!-- SECTION 03 — The Growth Challenge -->
+    <section class="section-padding container">
+        <div class="text-center">
+            <span class="pitch-badge">Section 03</span>
+            <h2 class="heading-serif">The Growth Challenge</h2>
+            <p class="subheading-sans">Mapping out the foundational barriers holding back digital conversion optimization.</p>
         </div>
-      </div>
-
-      <div class="course reveal">
-        <div class="course-no"><span class="n">02</span><span class="lbl">First Course</span></div>
-        <div class="course-body">
-          <span class="sub">Website Conversion Redesign</span>
-          <h3>Turn browsers into booked quotes</h3>
-          <p class="desc">The site's story is strong — the job is shortening the distance between "this looks delicious" and a submitted quote request, on mobile especially.</p>
-          <div class="tactics">
-            <span class="tactic">Sticky "Get a Quote" flow</span>
-            <span class="tactic">Menu-forward mobile layout</span>
-            <span class="tactic">Page speed &amp; image optimization</span>
-            <span class="tactic">Testimonials woven into every service page</span>
-          </div>
+        <div class="challenge-grid">
+            <div class="challenge-card">
+                <span class="pitch-label">Discovery</span>
+                <h3>How do new customers find Zoila's Kitchen?</h3>
+                <p>Capturing local search interest in Welland and routing prospects effectively via high-intent localized SEO asset pipelines.</p>
+            </div>
+            <div class="challenge-card">
+                <span class="pitch-label">Conversion</span>
+                <h3>How easily can customers place an order?</h3>
+                <p>Eliminating architectural drop-off points with a direct, frictionless menu layout engineered for instant checkouts.</p>
+            </div>
+            <div class="challenge-card">
+                <span class="pitch-label">Retention</span>
+                <h3>What brings customers back next week?</h3>
+                <p>Automating automated weekly reminder sequences tailored to customer ordering histories to turn one-time checkouts into habits.</p>
+            </div>
+            <div class="challenge-card">
+                <span class="pitch-label">Loyalty</span>
+                <h3>How do customers become brand advocates?</h3>
+                <p>Incentivizing review loops and organic referrals using tailored digital loyalty programs built into the web ecosystem.</p>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="course reveal">
-        <div class="course-no"><span class="n">03</span><span class="lbl">Second Course</span></div>
-        <div class="course-body">
-          <span class="sub">Content &amp; Social Media Engine</span>
-          <h3>Let the food do the talking</h3>
-          <p class="desc">A consistent kitchen-to-camera content system — prep footage, plating, family stories — built to travel on Reels and get shared inside Welland community groups.</p>
-          <div class="tactics">
-            <span class="tactic">Weekly short-video content calendar</span>
-            <span class="tactic">Behind-the-kitchen Instagram/Facebook system</span>
-            <span class="tactic">Niagara community group &amp; page seeding</span>
-            <span class="tactic">UGC &amp; guest photo repurposing</span>
-          </div>
+    <!-- SECTION 04 — The Future Website Experience -->
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="text-center">
+                <span class="pitch-badge">Section 04</span>
+                <h2 class="heading-serif">The Future Website Experience</h2>
+                <p class="subheading-sans">Transitioning from a passive informational portfolio into an active visual pipeline.</p>
+            </div>
+            
+            <div class="comparison-wrapper">
+                <div class="journey-column">
+                    <h3>Website Before:<br><span style="color: #ef4444; font-size: 1.3rem; font-weight: 600;">Basic Online Presence</span></h3>
+                    <div class="funnel-flow">
+                        <div class="funnel-step" style="border-left-color: #ef4444;">Customer visits web presence</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step" style="border-left-color: #ef4444;">Looks around text sections</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step" style="border-left-color: #ef4444; background: #fee2e2;">Leaves without trace</div>
+                    </div>
+                </div>
+                
+                <div class="journey-column dark-theme">
+                    <h3>Website Redesign:<br><span style="color: var(--primary-gold); font-size: 1.3rem; font-weight: 600;">Active Conversion Pipeline</span></h3>
+                    <div class="funnel-flow">
+                        <div class="funnel-step">Brand Discovery (Local SEO Match)</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step">Browse Automated Weekly Menu Options</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step">Order Meals / Confirm Booking</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step">Join Integrated Loyalty List</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step">Receive Target Automation Offers</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step">Repeat Customer Engagement Loop</div>
+                        <div class="funnel-arrow">↓</div>
+                        <div class="funnel-step" style="background: var(--slate-card); color: var(--primary-gold);">Organic Local Referral Node</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="course reveal">
-        <div class="course-no"><span class="n">04</span><span class="lbl">Main Course</span></div>
-        <div class="course-body">
-          <span class="sub">Paid Lead Generation</span>
-          <h3>Put the menu in front of the right table</h3>
-          <p class="desc">Targeted Meta &amp; Google campaigns split by guest type — weekly meal prep for families, promotional packages for students, and quote-request ads for event hosts.</p>
-          <div class="tactics">
-            <span class="tactic">Meta lead-form ads (families &amp; students)</span>
-            <span class="tactic">Google Search ads (catering &amp; senior meals)</span>
-            <span class="tactic">Geo-targeting: Welland, Niagara Falls, St. Catharines, Port Colborne</span>
-            <span class="tactic">Retargeting website visitors</span>
-          </div>
+    <!-- SECTION 05 — Website Redesign Concept Mockup -->
+    <section class="section-padding container text-center">
+        <span class="pitch-badge">Section 05</span>
+        <h2 class="heading-serif">Website Redesign Concept</h2>
+        <p class="subheading-sans">Interactive homepage layout architecture proposed for the digital transition.</p>
+        
+        <div class="mockup-browser">
+            <div class="browser-chrome">
+                <div class="chrome-dot"></div><div class="chrome-dot"></div><div class="chrome-dot"></div>
+            </div>
+            <div class="mockup-hero">
+                <div style="font-family: var(--font-sans); font-weight: 700; letter-spacing: 2px; font-size: 0.9rem; color: var(--primary-gold);">ZOILA'S KITCHEN</div>
+                <h2>Wholesome meals<br>crafted for every table.</h2>
+                <p>Fresh ingredients. Thoughtful preparation. Made with care.</p>
+                <div class="mockup-ctas">
+                    <a href="#" class="btn btn-gold" onclick="event.preventDefault();">Order Meals</a>
+                    <a href="#" class="btn btn-outline" onclick="event.preventDefault();">Explore Catering</a>
+                </div>
+                <div style="margin-top: 30px; font-size: 0.9rem; color: #f1f5f9;">
+                    <span style="color: var(--primary-gold);">★★★★★</span> Loved by our community
+                </div>
+            </div>
+            <div class="mockup-pillars">
+                <div class="pillar-nav-item">Weekly Meal Options</div>
+                <div class="pillar-nav-item">Catering Experiences</div>
+                <div class="pillar-nav-item">Our Story</div>
+                <div class="pillar-nav-item" style="border: none;">Customer Reviews</div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="course reveal">
-        <div class="course-no"><span class="n">05</span><span class="lbl">Cheese Course</span></div>
-        <div class="course-body">
-          <span class="sub">Email &amp; SMS Nurture</span>
-          <h3>Turn a single order into a standing one</h3>
-          <p class="desc">A quiet automation layer that reminds weekly meal-prep guests it's ordering day, welcomes new subscribers, and win-backs anyone who's gone a month without ordering.</p>
-          <div class="tactics">
-            <span class="tactic">Welcome &amp; first-order sequence</span>
-            <span class="tactic">Weekly "menu's up" SMS reminder</span>
-            <span class="tactic">30-day win-back flow</span>
-            <span class="tactic">Post-catering-event follow-up</span>
-          </div>
+    <!-- SECTION 06 — Customer Growth Engine (Dark Canvas) -->
+    <section class="section-padding dark-canvas text-center">
+        <div class="container">
+            <span class="pitch-badge" style="background: #1e293b; color: #94a3b8;">Section 06</span>
+            <h2 class="heading-serif">Customer Growth Engine</h2>
+            <p class="subheading-sans" style="color: var(--text-light);">How single social media views are scaled systematically into lifetime customer loops.</p>
+            
+            <div class="funnel-flow">
+                <div class="funnel-step">Instagram Content Discovery</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">Website Discovery & Brand Audit</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">First Purchase Intent Captured</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">Seamless Email Capture Node</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">Welcome Offer (10% Off Direct Trigger)</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">Weekly Menu Reminder Delivery</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">Repeat Order Processing Loop</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step">VIP Customer System Onboarding</div>
+                <div class="funnel-arrow">↓</div>
+                <div class="funnel-step" style="border-left-color: #38bdf8;">Organic Local Referral Node Generated</div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="course reveal">
-        <div class="course-no"><span class="n">06</span><span class="lbl">Dessert</span></div>
-        <div class="course-body">
-          <span class="sub">Reviews, Referrals &amp; Community Partnerships</span>
-          <h3>Let happy guests set the table for the next one</h3>
-          <p class="desc">A structured review-request system, a simple refer-a-friend credit, and light partnerships with senior centres, Niagara College groups, and local offices.</p>
-          <div class="tactics">
-            <span class="tactic">Automated Google review requests</span>
-            <span class="tactic">Refer-a-friend meal credit</span>
-            <span class="tactic">Senior centre &amp; campus partnerships</span>
-            <span class="tactic">Corporate lunch/office catering outreach</span>
-          </div>
+    <!-- SECTION 07 — Meal Prep Growth Strategy -->
+    <section class="section-padding container">
+        <div class="text-center">
+            <span class="pitch-badge">Section 07</span>
+            <h2 class="heading-serif">Meal Prep Growth Strategy</h2>
+            <p class="subheading-sans">Structuring programmatic ordering systems to balance internal delivery mechanics.</p>
         </div>
-      </div>
+        
+        <div class="strategy-cards-grid">
+            <div class="feature-card">
+                <h3>Weekly Ordering System</h3>
+                <p>Make ordering simple by removing conversational friction points.</p>
+                <ul>
+                    <li>Dynamic Weekly Menu Content Display</li>
+                    <li>Highlighted Seasonal Featured Meals</li>
+                    <li>Automated Live Cut-Off Ordering Deadlines</li>
+                    <li>Structured Delivery/Pickup Route Options</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Subscription Opportunity</h3>
+                <p>Create predictable and recurring baseline revenue loops for the production kitchen.</p>
+                <ul>
+                    <li>Weekly Meal Plan Commitments</li>
+                    <li>Customisable Family Meal Package Frameworks</li>
+                    <li>Corporate Lunch Bulk Distribution Frameworks</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Customer Retention</h3>
+                <p>Stop customer drop-off after their initial sample order run.</p>
+                <ul>
+                    <li>Personalised Lifestyle Email Campaigns</li>
+                    <li>Birthday Engagement & Anniversary Offers</li>
+                    <li>Seasonal Holiday Promotion Rotations</li>
+                    <li>Tiered VIP Cash-Back Rewards Pipeline</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- SECTION 08 — Catering Growth System -->
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="text-center">
+                <span class="pitch-badge">Section 08</span>
+                <h2 class="heading-serif">Catering Growth System</h2>
+                <p class="subheading-sans">Moving operations smoothly upmarket from simple single dish items into highly lucrative recurring commercial events.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div class="feature-card">
+                    <h3>High-Value Target Markets</h3>
+                    <p style="margin-bottom: 20px;">Positioning the operational infrastructure of Zoila's Kitchen directly in front of regional corporate decision makers.</p>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="background: var(--light-bg); padding: 12px 20px; border-radius: 6px; font-weight: 600; border-left: 4px solid var(--primary-gold);">✓ Corporate Boardroom Lunches</div>
+                        <div style="background: var(--light-bg); padding: 12px 20px; border-radius: 6px; font-weight: 600; border-left: 4px solid var(--primary-gold);">✓ Private Celebrations & Milestone Gatherings</div>
+                        <div style="background: var(--light-bg); padding: 12px 20px; border-radius: 6px; font-weight: 600; border-left: 4px solid var(--primary-gold);">✓ Local Institutional & Wellness Programs</div>
+                        <div style="background: var(--light-bg); padding: 12px 20px; border-radius: 6px; font-weight: 600; border-left: 4px solid var(--primary-gold);">✓ Community Non-Profit Gala Events</div>
+                    </div>
+                </div>
+                
+                <div class="journey-column dark-theme" style="padding: 30px;">
+                    <h4 style="font-family: var(--font-serif); font-size: 1.4rem; text-align: center; margin-bottom: 20px; color: var(--primary-gold);">The Inbound Catering Funnel</h4>
+                    <div class="funnel-flow" style="margin: 0;">
+                        <div class="funnel-step" style="padding: 12px 20px; font-size:0.95rem;">Intent-Driven Google Search Query</div>
+                        <div class="funnel-arrow" style="font-size:1rem;">↓</div>
+                        <div class="funnel-step" style="padding: 12px 20px; font-size:0.95rem;">High-Conversion Catering Landing Page</div>
+                        <div class="funnel-arrow" style="font-size:1rem;">↓</div>
+                        <div class="funnel-step" style="padding: 12px 20px; font-size:0.95rem;">Interactive Capacity Inquiry Form</div>
+                        <div class="funnel-arrow" style="font-size:1rem;">↓</div>
+                        <div class="funnel-step" style="padding: 12px 20px; font-size:0.95rem;">Automated CRM Notification Follow Up</div>
+                        <div class="funnel-arrow" style="font-size:1rem;">↓</div>
+                        <div class="funnel-step" style="padding: 12px 20px; font-size:0.95rem; background: var(--primary-gold); color: white;">Booked Premium Catering Client</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= SERVICE FLOW ================= -->
-<section class="wrap" style="background:var(--paper-dark);" id="flow">
-  <div class="inner">
-    <div class="head-row reveal">
-      <div>
-        <span class="eyebrow">Course 04 — Service Flow</span>
-        <h2>From stranger to regular</h2>
-      </div>
-      <p class="head-note">Every course on the menu feeds one continuous path — the way a guest actually moves from first glance to standing weekly order.</p>
-    </div>
-    <div class="flow-rail reveal">
-      <div class="flow-stop"><div class="flow-dot"></div><h3>Discover</h3><p>Found via Google Maps, local SEO, or a shared Reel.</p></div>
-      <div class="flow-stop"><div class="flow-dot"></div><h3>Crave</h3><p>Engages with kitchen content, saves a post, visits the site.</p></div>
-      <div class="flow-stop"><div class="flow-dot"></div><h3>Order</h3><p>Submits a quote request or first meal-prep order.</p></div>
-      <div class="flow-stop"><div class="flow-dot"></div><h3>Return</h3><p>Nurtured by email/SMS into a weekly standing order.</p></div>
-      <div class="flow-stop"><div class="flow-dot"></div><h3>Refer</h3><p>Leaves a review, refers a friend, books the next event.</p></div>
-    </div>
-  </div>
-</section>
+    <!-- SECTION 09 & 10 — Social Channels & SEO Strategy -->
+    <section class="section-padding container text-center">
+        <span class="pitch-badge">Sections 09 & 10</span>
+        <h2 class="heading-serif">Social Architecture & SEO Strategy</h2>
+        <p class="subheading-sans">Positioning digital visibility tools as active storefront client pipelines.</p>
+        
+        <div class="social-pillars-container" style="margin-bottom: 50px;">
+            <div class="social-pillar-item">
+                <h4>🍲 Meal Prep</h4>
+                <p>Showing raw preparation transparently to build deep baseline quality authority.</p>
+            </div>
+            <div class="social-pillar-item">
+                <h4>🥗 Finished Dishes</h4>
+                <p>High-resolution style framing built carefully to provoke immediate buying actions.</p>
+            </div>
+            <div class="social-pillar-item">
+                <h4>❤️ Customer Stories</h4>
+                <p>Social proof items proving continuous delivery excellence across Welland.</p>
+            </div>
+            <div class="social-pillar-item">
+                <h4>👩‍🍳 Brand Story</h4>
+                <p>Unveiling the human team, heritage roots, and culinary history backing the kitchen.</p>
+            </div>
+            <div class="social-pillar-item">
+                <h4>📍 Local Community</h4>
+                <p>Strategic geo-tag elements linking the physical space directly to the Niagara Region.</p>
+            </div>
+        </div>
 
-<!-- ================= PREP SCHEDULE ================= -->
-<section class="wrap dark" id="schedule">
-  <div class="inner">
-    <div class="head-row reveal">
-      <div>
-        <span class="eyebrow">Course 05 — Prep Schedule</span>
-        <h2>The first 90 days</h2>
-      </div>
-      <p class="head-note" style="color:rgba(241,233,214,0.65);">Foundations first, then service, then a full house — nothing launches before the kitchen is ready for it.</p>
-    </div>
-    <div class="schedule reveal">
-      <div class="sched-card">
-        <span class="month">Month 01</span>
-        <h3>Mise en Place</h3>
-        <ul>
-          <li>Google Business Profile built &amp; optimized</li>
-          <li>Website conversion audit &amp; quote-flow fixes</li>
-          <li>Tracking &amp; analytics installed</li>
-          <li>Content calendar &amp; photo/video system launched</li>
-        </ul>
-      </div>
-      <div class="sched-card">
-        <span class="month">Month 02</span>
-        <h3>First Service</h3>
-        <ul>
-          <li>Meta &amp; Google lead campaigns launched</li>
-          <li>Email/SMS welcome &amp; reminder flows live</li>
-          <li>Review-request system activated</li>
-          <li>First performance check-in &amp; creative refresh</li>
-        </ul>
-      </div>
-      <div class="sched-card">
-        <span class="month">Month 03</span>
-        <h3>Full Menu</h3>
-        <ul>
-          <li>Referral program &amp; community partnerships live</li>
-          <li>Retargeting scaled on top performers</li>
-          <li>Reporting dashboard delivered</li>
-          <li>Next-quarter growth plan presented</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="feature-card" style="text-align: left; background: var(--slate-dark); color: white; border: none;">
+            <h3 style="color: white; font-family: var(--font-serif);">Section 10 — High-Intent SEO Structural Engineering</h3>
+            <p style="color: var(--text-light); margin-bottom: 20px;">Deploying a dedicated schema configuration strategy targeting ready-to-buy localized keywords to maximize visibility in regional organic lookups.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; font-weight: 600; font-size: 0.95rem;">
+                <div style="background: #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid var(--primary-gold);">"Catering in Welland Ontario"</div>
+                <div style="background: #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid var(--primary-gold);">"Niagara Region Healthy Meal Prep"</div>
+                <div style="background: #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid var(--primary-gold);">"Customisable Event Menus Welland"</div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= THE CHECK ================= -->
-<section class="wrap" id="check">
-  <div class="inner">
-    <div class="head-row reveal" style="justify-content:center;text-align:center;">
-      <div style="margin:0 auto;">
-        <span class="eyebrow">Course 06 — The Check</span>
-        <h2>Investment &amp; terms</h2>
-      </div>
-    </div>
-    <div class="receipt-wrap reveal">
-      <div class="receipt">
-        <h3>Zoila's Kitchen</h3>
-        <div class="rsub">GROWTH MENU · 90-DAY ENGAGEMENT</div>
-        <div class="rline"><span>Website Conversion Redesign &amp; CRO</span><span>$2,400</span></div>
-        <div class="rline"><span>Local SEO + Google Business Profile (3 mo)</span><span>$1,500</span></div>
-        <div class="rline"><span>Paid Ad Campaign Build + Management (3 mo)</span><span>$2,800</span></div>
-        <div class="rline"><span>Content &amp; Social Strategy System</span><span>$1,400</span></div>
-        <div class="rline"><span>Email / SMS Automation Build</span><span>$1,100</span></div>
-        <div class="rline"><span>Reporting Dashboard + Strategy Calls</span><span>$800</span></div>
-        <div class="rtotal"><span>Total</span><span>$10,000 CAD</span></div>
-        <p class="rnote">Ad spend billed directly by Meta/Google, separate from this total. HST applicable. Figures are illustrative for presentation purposes.</p>
-        <div class="rcut">✂ - - - - - - - - - - - - - - - - - - - - - - - -</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- SECTION 11 — 90-Day Implementation Timeline -->
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container text-center">
+            <span class="pitch-badge">Section 11</span>
+            <h2 class="heading-serif">90-Day Implementation Roadmap</h2>
+            <p class="subheading-sans">A controlled execution lifecycle deployed across three dedicated, milestone-tracked operational operational phases.</p>
+            
+            <div class="roadmap-timeline">
+                <div class="roadmap-phase">
+                    <h3 style="color: var(--primary-gold);">Month 01 — Foundation</h3>
+                    <ul>
+                        <li>Comprehensive Brand Strategy Audit</li>
+                        <li>High-Intent Conversion UX Strategy</li>
+                        <li>Granular Customer Journey Alignment</li>
+                        <li>Localized Regional SEO Keyword Mapping</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3 style="color: var(--charcoal);">Month 02 — Build Phase</h3>
+                    <ul>
+                        <li>Complete Architectural Site Redesign</li>
+                        <li>Friction-Free Menu Ordering Experience</li>
+                        <li>Dedicated Inbound Catering Funnel</li>
+                        <li>Automated First-Order Email Capture Setup</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3 style="color: #10b981;">Month 03 — Growth Engine</h3>
+                    <ul>
+                        <li>Multi-Channel Media Content Strategy</li>
+                        <li>Localized Social Awareness Campaigns</li>
+                        <li>Funnel Optimization & Performance Review</li>
+                        <li>Monthly KPI Analytics Reporting Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= PROJECTED YIELD ================= -->
-<section class="wrap" style="background:var(--paper-dark);" id="yield">
-  <div class="inner">
-    <div class="head-row reveal">
-      <div>
-        <span class="eyebrow">Projected Yield</span>
-        <h2>What a full house looks like</h2>
-      </div>
-      <p class="head-note">Directional targets for the first 90 days, based on comparable meal-prep &amp; catering campaigns in similar-sized Ontario markets.</p>
-    </div>
-    <div class="kpi-grid reveal">
-      <div class="kpi-card"><span class="num">35–55</span><span class="lbl">Qualified leads per month by Month 3</span></div>
-      <div class="kpi-card"><span class="num">$18–28</span><span class="lbl">Estimated cost per qualified lead</span></div>
-      <div class="kpi-card"><span class="num">3×</span><span class="lbl">Target lift in weekly meal-prep subscribers</span></div>
-      <div class="kpi-card"><span class="num">2×</span><span class="lbl">Target lift in catering inquiries</span></div>
-    </div>
-    <p class="kpi-disclaimer">Projections are directional planning targets, not guarantees — actuals depend on ad budget, seasonality, and offer strength, and will be recalibrated using live campaign data each month.</p>
-  </div>
-</section>
+    <!-- SECTION 12 — Strategic Investment Scopes -->
+    <section class="section-padding container text-center">
+        <span class="pitch-badge">Section 12</span>
+        <h2 class="heading-serif">Project Investment Framework</h2>
+        <p class="subheading-sans">Clear, professional commercial options designed to match growth trajectories cleanly over time.</p>
+        
+        <div class="investment-matrix">
+            <div class="pricing-tier">
+                <div class="tier-title">Digital Transformation Package</div>
+                <div class="price">$6,500 <span style="font-size: 1rem; color: var(--text-muted);">CAD / Flat-Rate</span></div>
+                <ul>
+                    <li>Comprehensive Growth Strategy & Systems Planning</li>
+                    <li>Premium Signature Website Redesign Framework</li>
+                    <li>Custom Frontend Engineering & Mobile Optimization</li>
+                    <li>Localized Foundational SEO Schema Architecture</li>
+                    <li>High-Value Inbound Commercial Catering Funnel</li>
+                    <li>Integrated Email Capture Hooks & Lead List Setup</li>
+                    <li>Analytics Pipeline Installation & Launch Operations Support</li>
+                </ul>
+                <button class="btn btn-gold" style="width:100%; border:none; border-radius:6px; cursor:pointer;" onclick="alert('Digital Transformation Scope Selected.');">Accept Transformation Scope</button>
+            </div>
+            
+            <div class="pricing-tier featured">
+                <div class="tier-title">Optional Growth Partnership</div>
+                <div class="price">$1,500 <span style="font-size: 1rem; color: var(--text-light);">CAD / Month</span></div>
+                <ul>
+                    <li>Continuous Dynamic Website Management & Updates</li>
+                    <li>Targeted Monthly Promotions & Holiday Campaign Rotations</li>
+                    <li>Automated Weekly Menu Email Marketing Deliveries</li>
+                    <li>Ongoing Search Engine Optimization Adjustments</li>
+                    <li>High-Converting Visual Media Content Strategy Plans</li>
+                    <li>Strategic Monthly Analytics Reports & Growth Consulting Syncs</li>
+                </ul>
+                <button class="btn btn-gold" style="width:100%; border:none; border-radius:6px; cursor:pointer;" onclick="alert('Growth Partnership Selected.');">Authorize Monthly retainer</button>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= CTA ================= -->
-<section class="cta-wrap" id="reserve">
-  <span class="eyebrow">Ready When You Are</span>
-  <h2>Let's set the table.</h2>
-  <p>One call to walk through the menu, line by line, and decide which courses come first.</p>
-  <a class="cta-btn" href="mailto:hello@brookedigital.co?subject=Zoila's%20Kitchen%20Growth%20Menu">Reserve a Strategy Call</a>
-</section>
+    <!-- SECTION 13 — Closing / Vision Impact Outro -->
+    <section class="closing-section text-center">
+        <div class="closing-box">
+            <span class="pitch-badge" style="background: #1e293b; color: #cbd5e1; margin-bottom: 40px;">Section 13 — Vision Alignment</span>
+            <h2 class="heading-serif" style="color: white; margin-bottom: 50px;">The Goal Is Simple.</h2>
+            
+            <div class="closing-row">
+                <h3>Turn first-time customers...</h3>
+                <p>into loyal customers.</p>
+            </div>
+            <div class="closing-row">
+                <h3>Turn routine meals...</h3>
+                <p>into memories.</p>
+            </div>
+            <div class="closing-row" style="border: none; padding-bottom: 0;">
+                <h3>Turn Zoila's Kitchen...</h3>
+                <p style="color: white; font-size: 2.5rem; text-shadow: 0 0 15px rgba(196,154,69,0.3);">a local staple brand.</p>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  Prepared for Zoila's Kitchen · Welland, Ontario &nbsp;—&nbsp; Digital Marketing &amp; Lead Generation Strategy &nbsp;—&nbsp; 2026
-</footer>
-
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  },{threshold:0.12});
-  revealEls.forEach(el=>io.observe(el));
-</script>
+    <!-- Agency Sign-off Block -->
+    <footer>
+        <p>Strategic Design Architecture Concept Proposal for Zoila's Kitchen.</p>
+        <p style="margin-top: 15px; font-weight: 700; tracking-spacing: 2px; color: var(--primary-gold);">CUSTOM EXCLUSIVE SOCIALS</p>
+    </footer>
 
 </body>
 </html>
