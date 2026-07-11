@@ -1,1 +1,635 @@
 
+/* =====================================================
+
+CUSTOM EXCLUSIVE SOCIALS
+ZOILA'S KITCHEN DIGITAL GROWTH PROPOSAL
+
+STYLE SYSTEM - PART 1
+
+===================================================== */
+
+
+/* ==========================
+   DESIGN TOKENS
+========================== */
+
+
+:root {
+
+    --black: #080808;
+    --dark: #111111;
+    --charcoal: #171717;
+
+    --gold: #C9A45C;
+    --gold-light: #E1C27A;
+
+    --cream: #F5EFE6;
+
+    --olive: #66704F;
+
+    --white: #FFFFFF;
+
+    --gray: #B8B8B8;
+    --dark-gray: #777777;
+
+
+    --border:
+    rgba(255,255,255,0.12);
+
+
+    --shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+
+    --transition:
+    all .4s ease;
+
+
+}
+
+
+
+
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body {
+
+    background:
+    var(--black);
+
+    color:
+    var(--white);
+
+    font-family:
+    "Inter",
+    sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+
+img {
+
+    max-width:100%;
+    display:block;
+
+}
+
+
+
+a {
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+ul {
+
+    list-style:none;
+
+}
+
+
+
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-weight:
+    500;
+
+}
+
+
+
+h1 {
+
+    line-height:
+    .95;
+
+}
+
+
+
+p {
+
+    color:
+    var(--gray);
+
+    line-height:
+    1.8;
+
+}
+
+
+
+
+
+.gold {
+
+    color:
+    var(--gold);
+
+}
+
+
+
+
+/* ==========================
+   LOADING SCREEN
+========================== */
+
+
+.loader {
+
+    position:
+    fixed;
+
+
+    inset:
+    0;
+
+
+    background:
+    var(--black);
+
+
+    display:
+    flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    z-index:
+    9999;
+
+
+    animation:
+    loaderExit 3.5s forwards;
+
+
+}
+
+
+
+
+.loader-content {
+
+    text-align:center;
+
+    padding:
+    30px;
+
+}
+
+
+
+.loader-content h3 {
+
+
+    color:
+    var(--gold);
+
+
+    font-family:
+    "Inter",
+    sans-serif;
+
+
+    font-size:
+    13px;
+
+
+    letter-spacing:
+    6px;
+
+
+    font-weight:
+    400;
+
+
+    margin-bottom:
+    45px;
+
+
+}
+
+
+
+.loader-content h1 {
+
+
+    color:
+    var(--white);
+
+
+    font-size:
+    clamp(45px,6vw,80px);
+
+
+    letter-spacing:
+    2px;
+
+
+}
+
+
+
+@keyframes loaderExit {
+
+
+    0% {
+
+        opacity:
+        1;
+
+        visibility:
+        visible;
+
+    }
+
+
+    75% {
+
+        opacity:
+        1;
+
+    }
+
+
+    100% {
+
+
+        opacity:
+        0;
+
+
+        visibility:
+        hidden;
+
+
+    }
+
+
+}
+
+
+
+
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+
+
+nav {
+
+
+    position:
+    fixed;
+
+
+    top:
+    0;
+
+
+    left:
+    0;
+
+
+    width:
+    100%;
+
+
+    padding:
+    30px 8%;
+
+
+    display:
+    flex;
+
+
+    justify-content:
+    space-between;
+
+
+    align-items:center;
+
+
+    z-index:
+    1000;
+
+
+
+    background:
+    linear-gradient(
+
+        rgba(8,8,8,.85),
+
+        transparent
+
+    );
+
+
+}
+
+
+
+.logo {
+
+
+    color:
+    var(--gold);
+
+
+    font-size:
+    15px;
+
+
+    letter-spacing:
+    5px;
+
+
+    font-weight:
+    500;
+
+
+}
+
+
+
+.nav-link {
+
+
+    position:
+    relative;
+
+
+    font-size:
+    14px;
+
+
+    letter-spacing:
+    1px;
+
+
+    color:
+    var(--white);
+
+
+}
+
+
+
+.nav-link::after {
+
+
+    content:"";
+
+
+    position:
+    absolute;
+
+
+    left:
+    0;
+
+
+    bottom:
+    -8px;
+
+
+    width:
+    0;
+
+
+    height:
+    1px;
+
+
+    background:
+    var(--gold);
+
+
+    transition:
+    var(--transition);
+
+
+}
+
+
+
+.nav-link:hover::after {
+
+
+    width:
+    100%;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   HERO FOUNDATION
+========================== */
+
+
+
+.hero {
+
+
+    min-height:
+    100vh;
+
+
+    display:
+    flex;
+
+
+    align-items:center;
+
+
+    position:
+    relative;
+
+
+    padding:
+    0 8%;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        rgba(0,0,0,.55),
+
+        rgba(0,0,0,.9)
+
+    ),
+
+    url("../images/hero.jpg")
+
+    center/cover no-repeat;
+
+
+
+}
+
+
+
+.hero::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+
+        circle at center,
+
+        transparent,
+
+        rgba(0,0,0,.65)
+
+    );
+
+
+}
+
+
+
+.hero-content {
+
+
+    position:
+    relative;
+
+
+    z-index:
+    2;
+
+
+    max-width:
+    950px;
+
+
+}
+
+
+
+.tag {
+
+
+    color:
+    var(--gold);
+
+
+    font-size:
+    13px;
+
+
+    letter-spacing:
+    6px;
+
+
+    margin-bottom:
+    35px;
+
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:
+    clamp(60px,8vw,120px);
+
+
+    color:
+    var(--white);
+
+
+}
+
+
+
+.hero p {
+
+
+    max-width:
+    650px;
+
+
+    font-size:
+    20px;
+
+
+    margin-top:
+    40px;
+
+
+}
+
+
