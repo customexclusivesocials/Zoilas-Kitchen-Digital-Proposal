@@ -31,6 +31,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-sans);
             color: var(--text-dark);
@@ -43,7 +47,7 @@
         .container { max-width: 1200px; margin: 0 auto; }
         .text-center { text-align: center; }
         
-        .pitch-label {
+        .pitch-badge {
             display: inline-block;
             background: #fef3c7;
             color: #d97706;
@@ -54,6 +58,18 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             letter-spacing: 0.5px;
+        }
+
+        .pitch-label {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .heading-serif {
@@ -71,7 +87,7 @@
             font-weight: 400;
         }
 
-        /* Header Navigation */
+        /* Top Navigation Bar */
         header {
             background-color: var(--charcoal);
             padding: 20px 5%;
@@ -86,84 +102,61 @@
         .logo { font-family: var(--font-serif); color: var(--white); font-size: 1.4rem; font-weight: 700; }
         .meta-badge { background: var(--primary-gold); color: var(--white); padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
 
-        /* Step Down / Funnel Connectors */
-        .funnel-flow {
+        /* SECTION 01 — Hero Introduction Style */
+        .intro-hero {
+            background: linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.95)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070') no-repeat center center/cover;
+            min-height: 95vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 15px;
-            margin: 40px auto;
-            max-width: 500px;
-        }
-        .funnel-step {
-            width: 100%;
-            background: var(--white);
-            padding: 16px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--primary-gold);
-            font-weight: 600;
+            justify-content: center;
             text-align: center;
-            font-size: 1.05rem;
+            color: var(--white);
+            padding: 60px 20px;
         }
+        .intro-content { max-width: 850px; }
+        .agency-presenter { font-size: 0.9rem; font-weight: 700; letter-spacing: 4px; color: var(--primary-gold); text-transform: uppercase; margin-bottom: 15px; }
+        .presents-text { font-size: 0.8rem; font-weight: 500; letter-spacing: 2px; color: var(--text-light); text-transform: uppercase; margin-bottom: 40px; }
+        .intro-hero h1 { font-family: var(--font-serif); font-size: 4rem; font-weight: 400; line-height: 1.1; margin-bottom: 25px; }
+        .intro-hero h1 span { display: block; font-size: 1.5rem; font-family: var(--font-sans); font-weight: 700; letter-spacing: 3px; color: var(--primary-gold); margin-bottom: 10px; }
+        .hero-tagline { font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: #cbd5e1; margin-bottom: 35px; font-weight: 300; }
+        .hero-description { color: var(--text-light); font-size: 1.2rem; max-width: 650px; margin: 0 auto 40px auto; font-weight: 300; line-height: 1.7; }
+        .btn-vision { display: inline-block; background: var(--primary-gold); color: var(--white); text-decoration: none; padding: 16px 36px; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: background 0.3s, transform 0.2s; }
+        .btn-vision:hover { background: var(--primary-gold-hover); transform: translateY(-2px); }
+
+        /* SECTION 02 — The Opportunity Layout */
+        .opportunity-box { background: var(--white); border-radius: 12px; border: 1px solid var(--border-color); padding: 60px 40px; max-width: 900px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .opp-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 35px 0; }
+        @media (max-width: 640px) { .opp-highlights { grid-template-columns: 1fr; } }
+        .opp-pillar { background: var(--light-bg); padding: 20px; border-radius: 6px; border-top: 3px solid var(--primary-gold); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--charcoal); text-align: center; }
+        .opp-conclusion { font-size: 1.2rem; color: var(--text-dark); max-width: 700px; margin: 35px auto 0 auto; font-weight: 500; }
+
+        /* Step Down / Funnel Connectors */
+        .funnel-flow { display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 40px auto; max-width: 500px; }
+        .funnel-step { width: 100%; background: var(--white); padding: 16px 25px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-gold); font-weight: 600; text-align: center; font-size: 1.05rem; }
         .funnel-arrow { color: var(--primary-gold); font-size: 1.5rem; font-weight: bold; }
 
         /* Section 03 — Cards Grid */
-        .challenge-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        .challenge-card {
-            background: var(--white);
-            padding: 35px 30px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s;
-        }
+        .challenge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .challenge-card { background: var(--white); padding: 35px 30px; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s; }
         .challenge-card:hover { transform: translateY(-5px); }
         .challenge-card h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 12px; color: var(--charcoal); }
         .challenge-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* Section 04 — Before vs After Journey Matrix */
-        .comparison-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
+        .comparison-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         @media (max-width: 768px) { .comparison-wrapper { grid-template-columns: 1fr; } }
         .journey-column { background: var(--white); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); }
         .journey-column.dark-theme { background: var(--slate-dark); color: var(--white); border: none; }
         .journey-column h3 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 25px; }
 
         /* Section 05 — Concept Interface Mockup Frame */
-        .mockup-browser {
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .browser-chrome {
-            background: #f1f5f9;
-            padding: 12px 20px;
-            display: flex;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
+        .mockup-browser { background: var(--white); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); max-width: 1000px; margin: 0 auto; }
+        .browser-chrome { background: #f1f5f9; padding: 12px 20px; display: flex; gap: 8px; border-bottom: 1px solid var(--border-color); }
         .chrome-dot { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e1; }
-        .mockup-hero {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070') no-repeat center center/cover;
-            padding: 100px 40px;
-            color: var(--white);
-        }
+        .mockup-hero { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070') no-repeat center center/cover; padding: 100px 40px; color: var(--white); }
         .mockup-hero h2 { font-family: var(--font-serif); font-size: 3.5rem; line-height: 1.1; margin: 15px 0; }
         .mockup-hero p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; font-weight: 300; color: #f1f5f9; }
-        .mockup-ctas .btn {
-            display: inline-block; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 5px; font-size: 0.95rem;
-        }
+        .mockup-ctas .btn { display: inline-block; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 5px; font-size: 0.95rem; }
         .btn-gold { background: var(--primary-gold); color: var(--white); }
         .btn-outline { border: 2px solid var(--white); color: var(--white); }
         .mockup-pillars { display: grid; grid-template-columns: repeat(4, 1fr); background: #f8fafc; border-top: 1px solid var(--border-color); }
@@ -226,11 +219,47 @@
 </head>
 <body>
 
-    <!-- Pitch Framework Header -->
+    <!-- Top Sticky Progress Track -->
     <header>
         <div class="logo">ZOILA'S KITCHEN</div>
         <div class="meta-badge">90-DAY STRATEGY FRAMEWORK</div>
     </header>
+
+    <!-- SECTION 01 — Title Blueprint Presentation Launch Frame -->
+    <section class="intro-hero">
+        <div class="intro-content">
+            <p class="agency-presenter">Custom Exclusive Socials</p>
+            <p class="presents-text">Presents</p>
+            <h1><span>Section 01</span>The Digital Evolution<br>of Zoila's Kitchen</h1>
+            <p class="hero-tagline">Wholesome meals. Thoughtfully crafted. Made for every table.</p>
+            <p class="hero-description">
+                A 90-day digital growth strategy engineered intentionally to scale routine orders, capture premium local catering inquiries, maximize customer retention, and anchor brand loyalty across Welland.
+            </p>
+            <a href="#opportunity" class="btn-vision">Explore The Vision</a>
+        </div>
+    </section>
+
+    <!-- SECTION 02 — The Opportunity -->
+    <section class="section-padding container" id="opportunity">
+        <div class="text-center">
+            <span class="pitch-badge">Section 02</span>
+            <h2 class="heading-serif">The Opportunity</h2>
+            <p class="subheading-sans">Capitalizing on an established culinary reputation to automate structural market growth.</p>
+        </div>
+        <div class="opportunity-box text-center">
+            <p style="font-size: 1.2rem; font-weight: 300; margin-bottom: 30px; color: var(--text-muted);">
+                Zoila's Kitchen already possesses what every highly successful food brand needs:
+            </p>
+            <div class="opp-highlights">
+                <div class="opp-pillar">A Meaningful Product</div>
+                <div class="opp-pillar">A Clear Purpose</div>
+                <div class="opp-pillar">A Loyal Customer Base</div>
+            </div>
+            <p class="opp-conclusion">
+                The next strategic opportunity is creating a responsive digital framework that consistently captures new transaction flows while effortlessly bringing existing clients back to your table week after week.
+            </p>
+        </div>
+    </section>
 
     <!-- SECTION 03 — The Growth Challenge -->
     <section class="section-padding container">
@@ -491,7 +520,7 @@
         <div class="container text-center">
             <span class="pitch-badge">Section 11</span>
             <h2 class="heading-serif">90-Day Implementation Roadmap</h2>
-            <p class="subheading-sans">A controlled execution lifecycle deployed across three dedicated, milestone-tracked operational operational phases.</p>
+            <p class="subheading-sans">A controlled execution lifecycle deployed across three dedicated, milestone-tracked operational phases.</p>
             
             <div class="roadmap-timeline">
                 <div class="roadmap-phase">
